@@ -1,0 +1,84 @@
+---
+title: Testing Input Config from cloudcannon.config.yml
+example_input_1: <p>Lorem Ipsum</p>
+example_input_2: /uploads/fpo.jpg
+example_input_3: Bolt
+example_input_4:
+  - Iowa
+  - Minnesota
+  - South Dakota
+example_cards:
+  - title: First Card
+    tagline: First Card Tagline
+    cta_label: Click Me
+    cta_url: https://www.ocupop.com
+  - title: Second Card
+    tagline: Second Card Tagline
+    cta_label: Read More
+    cta_url: https://www.google.com
+page_blocks:
+  - _id: text_block
+    title: Text Block Title
+    content_markdown: Lorem Ipsum dolor sit amet...
+    image: /uploads/fpo.jpg
+  - _id: testimonial
+    name: Testimonial Name
+    quote: this is the quote
+    company: Ocupop
+    photo_image: /uploads/fpo.jpg
+  - _id: slideshow
+    slides:
+      - image: /uploads/fpo.jpg
+        caption: Slide Image 1
+      - image: /uploads/fpo.jpg
+        caption: Slide Image 2
+---
+
+<div id="example-contact-form">
+  <h2 class="text-center my-4">Testing Input Config from cloudcannon.config.yml</h2>
+  <div class="container">
+      <div class="border p-4 mb-4"><b>Example Input 1:</b> {{ page.example_input_1 }} </div> 
+      <div class="border p-4 mb-4"><b>Example Input 2:</b> {{ page.example_input_2 }} </div> 
+      <div class="border p-4 mb-4"><b>Example Input 3:</b> {{ page.example_input_3 }} </div> 
+      <div class="border p-4 mb-4"><b>Example Input 4:</b> 
+        {% for item in page.example_input_4 %} 
+            <li>{{item}}</li>
+        {% endfor %}
+    </div> 
+
+
+
+    <div class="border p-4 mb-4">
+      <h2>Cards:</h2> 
+      <div  class="row gx-4">
+        {% for card in page.example_cards %} 
+          <div class="col-4 mb-4" >
+            <div class="border p-4">
+                <h3>{{card.title}}</h3>
+                <p>{{card.tagline}}</p>
+                <a href="{{card.cta_url}}" class="btn btn-primary">{{card.cta_label}}</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+
+
+
+
+    <div class="border p-4 mb-4">
+      <h2>Page Blocks: </h2>
+      {% for block in page.page_blocks %}
+        {% case block._id %}
+          {% when 'text_block' %}
+            <div><b>Text Block:</b> {{ block.title }}</div>
+          {% when 'testimonial' %}
+            <div><b>Testimonial:</b> {{ block.name }}</div>
+          {% when 'slideshow' %}
+            <div><b>Slideshow:</b>  {{ block.slides.size }} slides</div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+
+</div>

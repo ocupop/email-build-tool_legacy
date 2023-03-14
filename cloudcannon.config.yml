@@ -1,0 +1,114 @@
+paths:  
+  uploads: uploads # The default location for newly uploaded files, relative to source
+  # collections: items # The path to the root collections folder, relative to source (automatically read from Jekyll if not set in the global configuration file)
+  data: _data # The path to site data files, relative to source (automatically read from Jekyll if not set in the global configuration file)
+  layouts: _layouts # The path to site layout files, relative to source (automatically read from Jekyll if not set in the global configuration file)
+  # includes: _partials # The path to site include files, relative to source (automatically read from Jekyll if not set in the global configuration file)
+
+
+# https://cloudcannon.com/documentation/articles/defining-your-collections/?ssg=Jekyll
+collections_config:
+  examples:
+    name: Examples    
+    _enabled_editors:
+      - visual
+      - content
+      - data
+    output: true       
+    subtext_key: role
+    # image_key: featured_image
+    # image_size: cover
+    singular_name: Example
+    singular_key: title
+    disable_add: false
+    description: Collection of some sandbox examples.
+    # documentation:
+    #   url: https://example.com/documentation
+    #   text: Read the documentation here.
+    icon: cruelty_free
+    add_options:
+      - name: Add Another Example Page
+        icon: kayaking
+
+
+
+# data_config controls what data sets are available to populate select and multiselect inputs.
+# If set as a boolean and true, all auto-discoverable data sets are added. This is only applicable to Jekyll and Hugo sites.
+# If set as an object, only those data sets are added.
+data_config:  
+  # authors: true # Populates data with authors from an data file with the matching name
+  # offices: true
+
+# These inputs are for demonstration purposes. See implementation on src/examples/testconfig.html
+_inputs:
+  permalink:
+    comment: proper permalink format example:// /about/team
+  example_input_1:
+    label: This Input Should Be A WYSIWYG
+    type: html
+  example_input_2:
+    label: This Input Should Be an Image
+    type: image
+  example_input_3:
+    label: This Input Should Be an Select
+    type: select
+    options:
+      values:
+        - Bolt
+        - Nut
+        - Gear  
+  example_input_4:
+    label: This Input Should Be an Multi Select
+    type: multiselect
+    options:
+      values:
+        - Wisconsin
+        - Minnesota
+        - north Dakota
+        - Iowa
+        - Illinois
+        - South Dakota  
+  example_cards:
+  page_blocks:
+    label: Dynamic page blocks
+    type: array
+    options:
+      structures: _structures.dynamic_blocks # This structure is defined below under "_structures"
+
+
+
+# ARRAY STRUCTURES
+# This is an example of how we can use array structures to allow the admin to add dynamic blocks. See examples/testconfig.html
+# https://cloudcannon.com/documentation/articles/migrating-to-input-configuration/?ssg=Jekyll#structures
+# https://cloudcannon.com/blog/managing-complex-content-with-array-structures/#:~:text=What%20are%20Array%20Structures%3F,to%20create%20their%20own%20pages.
+_structures:
+  dynamic_blocks: # see the "_input" config for "page_blocks" above. 
+    # style: modal
+    values:
+      - label: Text Block
+        icon: ballot
+        value:
+          _id: text_block
+          title:
+          content_markdown:
+          image:
+      - label: Testimonial
+        icon: format_quote
+        value:
+          _id: testimonial
+          name:
+          quote:
+          company:
+          photo_image:
+      - label: Slideshow
+        icon: collections
+        value:
+          _id: slideshow
+          slides: []
+  slides:
+    values:
+      - label: Slide
+        icon: collections
+        value:
+          image:
+          caption:

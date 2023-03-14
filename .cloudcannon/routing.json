@@ -1,0 +1,11 @@
+{
+  "routes": [
+    {
+      "from": "/((?!/examples/).*)",
+      "to": "/examples/$1",
+      "status": 302,
+      "forced": false
+    }
+  ]
+}
+

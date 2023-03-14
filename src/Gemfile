@@ -1,0 +1,9 @@
+source "http://rubygems.org"
+ruby "2.7.3"
+gem "jekyll"
+gem 'sassc'
+gem 'scss_lint'
+
+group :jekyll_plugins do
+  gem 'jekyll-sitemap'
+end

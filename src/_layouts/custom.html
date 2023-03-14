@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+{% for section in page.page_sections %}
+  {% case section._type %}
+    {% when 'single_column' %}
+      {% include page_sections/single-column.html %}
+    {% when 'two_column' %}
+      {% include page_sections/two-column.html %}
+    {% when 'three_column' %}
+      {% include page_sections/three-column.html %}
+  {% endcase %}
+{% endfor %}
