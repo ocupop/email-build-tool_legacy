@@ -17,6 +17,15 @@ object:
     </div>
 
     <div class="my-4">
+      <h3>Newsletter Emails</h3>
+      <ul>
+        {% for page in site.il-newsletters %}
+          <li><a href="{{page.url}}">{{ page.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="my-4">
       <h3>Sandbox Pages</h3>
       <ul>
         {% for page in site.examples %}

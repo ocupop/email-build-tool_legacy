@@ -1,0 +1,41 @@
+<table class="work-with-cr" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="{{section.background-color}}" style="min-width:100%;">
+  <tr>
+    <td align="center">
+      <table width="{{page.width-and-spacing.container-width}}" cellspacing="0" cellpadding="0" border="0" class="responsive-table">
+        <tr>
+          <td class="gutter" style="width:{{page.width-and-spacing.gutter-width}}px;"></td>
+          <td style="padding-top:40px;padding-bottom:36px;text-align:center;">
+            {% if section.image %}
+            <img src="{{section.image}}" style="display:inline-block;">
+            {% endif %}
+            <h1 style="font-family:Verdana,Arial,sans-serif,'Chakra Petch';font-size:30px;margin-top:10px;margin-bottom:13px;">{{section.headline}}</h1>
+            <img src="http://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460704/rule.gif?1678460704" alt="-------"/>
+            <div style="font-family:Arial,Helvetica,sans-serif,Averta;font-size:20px;line-height:1.35;">
+            <p>{{section.copy}}</p>
+            </div>
+            {% if section.cta.url %}
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="rounded-button-table" style="margin:auto;">
+              <tr>
+                <td style="padding-top:20px;" align="middle">
+                  <div>
+                    <!--[if mso]>
+                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://lab.cr.org/build-with-us/" style="height:50px;v-text-anchor:middle;width:{{section.cta.width}}px;" arcsize="50%" strokecolor="{{section.cta.background-color}}" fillcolor="{{section.cta.background-color}}">
+                        <w:anchorlock/>
+                        <center style="color:{{section.cta.text-color}};font-family:Helvetica, Arial,sans-serif;font-size:20px;line-height:20px;">{{section.cta.label}}</center>
+                      </v:roundrect>
+                    <![endif]-->
+                    <a href="{{section.cta.url}}" style="background-color:{{section.cta.background-color}};border:1px solid {{section.cta.background-color}};border-radius:22px;color:{{section.cta.text-color}};display:inline-block;font-family:Arial,Helvetica,sans-serif,Averta;font-size:24px;line-height:44px;text-align:center;text-decoration:none;width:{{section.cta.width}}px;-webkit-text-size-adjust:none;mso-hide:all;">{{section.cta.label}}</a>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            {% endif %}
+
+          </td>
+          <td class="gutter" style="width:{{page.width-and-spacing.gutter-width}}px;"></td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>

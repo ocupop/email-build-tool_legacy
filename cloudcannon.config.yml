@@ -1,4 +1,4 @@
-paths:  
+paths:
   uploads: uploads # The default location for newly uploaded files, relative to source
   # collections: items # The path to the root collections folder, relative to source (automatically read from Jekyll if not set in the global configuration file)
   data: _data # The path to site data files, relative to source (automatically read from Jekyll if not set in the global configuration file)
@@ -8,13 +8,28 @@ paths:
 
 # https://cloudcannon.com/documentation/articles/defining-your-collections/?ssg=Jekyll
 collections_config:
-  examples:
-    name: Examples    
+  il-newlsletters:
+    name: InnovationLab Newsletters
     _enabled_editors:
       - visual
       - content
       - data
-    output: true       
+    output: true
+    singular_name: Newsletter
+    singular_key: newsletter
+    description: The Innovation Lab Newsletter Email
+    icon: cruelty_free
+    add_options:
+      - name: Create Another Newsletter
+        icon: kayaking
+
+  examples:
+    name: Examples
+    _enabled_editors:
+      - visual
+      - content
+      - data
+    output: true
     subtext_key: role
     # image_key: featured_image
     # image_size: cover
@@ -35,7 +50,7 @@ collections_config:
 # data_config controls what data sets are available to populate select and multiselect inputs.
 # If set as a boolean and true, all auto-discoverable data sets are added. This is only applicable to Jekyll and Hugo sites.
 # If set as an object, only those data sets are added.
-data_config:  
+data_config:
   # authors: true # Populates data with authors from an data file with the matching name
   # offices: true
 
@@ -56,7 +71,7 @@ _inputs:
       values:
         - Bolt
         - Nut
-        - Gear  
+        - Gear
   example_input_4:
     label: This Input Should Be an Multi Select
     type: multiselect
@@ -67,7 +82,7 @@ _inputs:
         - north Dakota
         - Iowa
         - Illinois
-        - South Dakota  
+        - South Dakota
   example_cards:
   page_blocks:
     label: Dynamic page blocks
@@ -82,7 +97,7 @@ _inputs:
 # https://cloudcannon.com/documentation/articles/migrating-to-input-configuration/?ssg=Jekyll#structures
 # https://cloudcannon.com/blog/managing-complex-content-with-array-structures/#:~:text=What%20are%20Array%20Structures%3F,to%20create%20their%20own%20pages.
 _structures:
-  dynamic_blocks: # see the "_input" config for "page_blocks" above. 
+  dynamic_blocks: # see the "_input" config for "page_blocks" above.
     # style: modal
     values:
       - label: Text Block
