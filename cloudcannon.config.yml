@@ -70,7 +70,7 @@ _inputs:
     type: select
     options:
       values: _select_data.il_bg_colors
-      value_key: key
+      value_key: hex
       preview:
         text:
           - key: display_name
