@@ -64,14 +64,14 @@ _inputs:
   example_input_2:
     label: This Input Should Be an Image
     type: image
-  example_input_3:
-    label: This Input Should Be an Select
+  il_newsletter_background_color:
+    label: Background Color
     type: select
     options:
       values:
-        - Bolt
-        - Nut
-        - Gear
+        - light_gray
+        - Another Color
+        - Transparent
   example_input_4:
     label: This Input Should Be an Multi Select
     type: multiselect
