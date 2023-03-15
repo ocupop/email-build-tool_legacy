@@ -31,9 +31,9 @@ placeholder_image: https://via.placeholder.com/1000x1000/333333/000000?text=Plac
 # (All CloudCannon CMS config is set in cloudcannon.config.yml)
 # ------------------------------------------------
 collections:
-  # il-newsletters:
-  #   output: true
-  #   permalink: /il-newsletters/:path/
+  il-newsletters:
+    output: true
+    permalink: /il-newsletters/:path/
   examples:
     output: true
     permalink: /examples/:path/

@@ -16,7 +16,7 @@ collections_config:
       - data
     output: true
     singular_name: Newsletter
-    singular_key: newsletter
+    singular_key: title
     description: The Innovation Lab Newsletter Email
     icon: newspaper
     add_options:
