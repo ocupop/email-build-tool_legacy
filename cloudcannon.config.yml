@@ -191,88 +191,86 @@ _structures:
         comment: Image left with text wrapped
         value:
           _type: headline_copy_cta
-          headline: Title of Section
-          copy_html: Lorem ipsum dolor sit amet, consect etuer adipiscing elit, sed diam non ummy nibh euismod tinciduntg ut laoreet dolore manga aliuam erat volutpat. Ut isi wnim ad moinim veniam, uis nnostruc exerci tation ullamcorper suspicit.
-          background-color: transparent
+          headline:
+          copy_html:
+          background-color:
           image:
           cta:
-            label: Click Here
+            label:
             url:
-            background-color: '#aacb65'
-            text-color: '#2c2c30'
-            width: 177
+            background-color:
+            text-color:
+            width:
       - label: Team Member Spotlight
         icon: account_circle
         comment: Features a team member with an image
         value:
           _type: teammember_spotlight
-          title: Lorem Ipsum
-          preheader: Innovator Spotlight
-          copy_html: >-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-            <p>Ut wisi enim ad minim veniam, quis no studmen, consetetuer adispiscindg elig, sed diam.</p>
+          title:
+          preheader:
+          copy_html:
           image:
-            image_src: https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460704/spotlight-portrait.jpg?1678460704
-            image_caption: Firstname Muchlongerlastname
-            image_alt: "Image of this person"
-          icon_image: https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460700/spotlight-eye.gif?1678460700
-          left_column_percent: 33
-          il_newsletter_background_color: '#f8f8f6'
+            image_src:
+            image_caption:
+            image_alt:
+          icon_image:
+          left_column_percent:
+          il_newsletter_background_color:
       - label: Link Card list with Images
         icon: view_list
         comment: Stacked cards with image on left and title & description on right.
         value:
           _type: link_list_with_images
-          title: Featured Initiatives
+          title:
           links:
-            - image: https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460701/featured-initiative-1.jpg?1678460701
-              title: Fight for Fair Internet
-              copy_text: We worked with consumers to get data needed to make broadband more accessible and affordable.
-              url: https://lab.stage.consumerreports.org/initiatives/fight-for-fair-internet/
+            - headline:
+              excerpt:
+              image:
+              link:
           cta_button:
-            label: Explore All Initiatives
-            url: https://lab.cr.org/initiatives/
-            il_newsletter_button_bkg_color: '#2c2c30'
-            il_newsletter_button_text_color: '#aacb65'
-            button_width: 285
-            left_column_percent: 33
+            label:
+            url:
+            il_newsletter_button_bkg_color:
+            il_newsletter_button_text_color:
+            button_width:
+            left_column_percent:
       - label: Events
         icon: event
         comment: Events List
         value:
           _type: events
-          title: Upcoming Events
+          title:
           events:
-            - title: Lorem Ipsum Conference
-              date: April 12, 2023
-              copy_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-              image: https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460701/event-image-fpo.jpg?1678460701
-              cta_label: Learn more
-              cta_url: #
+            - title:
+              date:
+              copy_text:
+              image:
+              cta_label:
+              cta_url:
 
       - label: Articles
         icon: article
-        comment: Single Column Content Section
+        comment: List of article links. Each article shows headline, excerpt, author and date
         value:
           _type: articles
-          title: CR Innovation Blog
+          title:
           articles:
-            - title: Article Title
-              url: #
-              copy_text: Lorem ipsum dolor sit amet
-              date: January 1, 2023
-              author_name: John Doe
-              author_image: https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460700/profile-pic-ginny-fahs.png?1678460700
+            - title:
+              url:
+              copy_text:
+              date:
+              author_name:
+              author_image:
       - label: Links list right, headline left
         icon: link
-        comment: Two Column Images
+        comment: List of links, with the headline in the left column
         value:
           _type: link_list_with_dates
-          title: Recent Research from CR
+          title:
           links:
-            - title: 'P2P Payment Apps: A Case Study fora Digital Finance Standard'
-              url: https://www.consumerreports.org//electronics-computers/cell-phones/google-pixel-6a-wrong-fingerprint-can-unlock-a2538109870/
-              date: January 24, 2023
+            - title:
+              url:
+              date:
   slides:
     values:
       - label: Slide
