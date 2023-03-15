@@ -127,7 +127,7 @@ _structures:
           slides: []
   il_newsletter_sections: # see the "_input" config for "il_newsletter_sections" above.
     values:
-      - label: Simple headline, text, image and CTA x
+      - label: Image, Headline, Text, CTA
         icon: format_align_center
         comment: Image left with text wrapped
         value:
@@ -142,7 +142,7 @@ _structures:
             background-color: '#aacb65'
             text-color: '#2c2c30'
             width: 177
-      - label: Link Card list with Images x
+      - label: Link Card list with Images
         icon: view_list
         comment: Stacked cards with image on left and title & description on right.
         value:
@@ -158,7 +158,7 @@ _structures:
             - headline:
               description:
               image:
-      - label: Team Member Spotlight x
+      - label: Team Member Spotlight
         icon: account_circle
         comment: Features a team member with an image
         value:
@@ -171,13 +171,13 @@ _structures:
         value:
           _type: events
           image:
-      - label: Articles x
+      - label: Articles
         icon: article
         comment: Single Column Content Section
         value:
           _type: articles
           block_html:
-      - label: List of links on right with headline on left x
+      - label: Links list right, headline left
         icon: link
         comment: Two Column Images
         value:
