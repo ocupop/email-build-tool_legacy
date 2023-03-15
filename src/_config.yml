@@ -31,9 +31,9 @@ placeholder_image: https://via.placeholder.com/1000x1000/333333/000000?text=Plac
 # (All CloudCannon CMS config is set in cloudcannon.config.yml)
 # ------------------------------------------------
 collections:
-  il-newsletters:
-    output: true
-    permalink: /il-newsletters/:path/
+  # il-newsletters:
+  #   output: true
+  #   permalink: /il-newsletters/:path/
   examples:
     output: true
     permalink: /examples/:path/
@@ -79,7 +79,7 @@ plugins:
 
 _array_structures:
   il_newsletter_sections:
-    - label: Simple headline, text, image and CTA
+    - label: Simple headline, text, image and CTA ~
       icon: format_align_center
       comment: Image left with text wrapped
       value:
@@ -95,7 +95,7 @@ _array_structures:
           text-color: '#2c2c30'
           width: 177
 
-    - label: Link Card list with Images
+    - label: Link Card list with Images ~
       icon: view_list
       comment: Stacked cards with image on left and title & description on right.
       value:
@@ -111,26 +111,26 @@ _array_structures:
           - headline:
             description:
             image:
-    - label: Team Member Spotlight
+    - label: Team Member Spotlight ~
       icon: account_circle
       comment: Features a team member with an image
       value:
         _type: teammember_spotlight
         name:
         image:
-    - label: Events
+    - label: Events ~
       icon: event
       comment: Events List
       value:
         _type: events
         image:
-    - label: Articles
+    - label: Articles ~
       icon: article
       comment: Single Column Content Section
       value:
         _type: articles
         block_html:
-    - label: List of links on right with headline on left
+    - label: List of links on right with headline on left ~
       icon: link
       comment: Two Column Images
       value:
