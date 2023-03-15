@@ -9,16 +9,31 @@ paths:
 # https://cloudcannon.com/documentation/articles/defining-your-collections/?ssg=Jekyll
 collections_config:
   il-newlsletters:
+    path: _il-newsletters
     name: InnovationLab Newsletters
+    description: The Innovation Lab Newsletter Email
+    sort:
+      key: date
+      order: desc
+    sort_options:
+      - key: date
+        label: Oldest to Newest
+      - key: date
+        order: desc
+        label: Newest to Oldest
+      - key: title
+        label: By Title
+    preview:
+      subtext:
+        - key: date
     _enabled_editors:
       - visual
       - content
       - data
     output: true
-    permalink: /il-newsletters/:path/
+    # permalink: /il-newsletters/:path/
     singular_name: Newsletter
     singular_key: title
-    description: The Innovation Lab Newsletter Email
     icon: newspaper
     add_options:
       - name: Create Another Newsletter
