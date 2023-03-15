@@ -75,8 +75,8 @@ _inputs:
     type: range
     options:
       step: 1
-      max: 50
-      min: 500
+      max: 500
+      min: 50
   il_newsletter_background_color:
     label: Background Color
     type: select
