@@ -27,12 +27,12 @@
                   <table width="{{leftcol_width}}" align="left" cellspacing="0" cellpadding="0" class="image-table responsive-table" style="width:{{leftcol_width}}px;">
                     <tr>
                       <td valign="top" align="center" style="width: {{leftcol_width}}px;font-family:Arial,Helvetica,sans-serif,Averta;padding-bottom:30px;" >
-                        <img src="{{ section.image_caption }}" style="display:block;" alt="{{section.image_caption}}" width="{{leftcol_width}}">
+                        <img src="{{ section.image.image_src }}" style="display:block;" alt="{{ section.image.image_alt }}" width="{{leftcol_width}}">
 
                         <table cellspacing="0" cellpadding="0" width="{{leftcol_width}}">
                           <tr>
                             <td style="padding:5px 12px;background-color:#2c2c30;color:#FFFFFF;font-size:12px;width:123px;font-family:Arial,Helvetica,sans-serif,Averta;">
-                              {{ section.name }}
+                              {{ section.image.image_caption }}
                             </td>
                           </tr>
                         </table>
