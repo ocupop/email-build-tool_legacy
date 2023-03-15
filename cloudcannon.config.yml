@@ -90,7 +90,7 @@ _inputs:
     options:
       structures: _structures.dynamic_blocks # This structure is defined below under "_structures"
   il_newsletter_sections:
-    label: Dynamic page blocks
+    label: Innovation Lab Newsletter
     type: array
     options:
       structures: _structures.il_newsletter_sections # This structure is defined below under "_structures"
