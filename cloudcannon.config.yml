@@ -206,7 +206,7 @@ _structures:
         comment: Features a team member with an image
         value:
           _type: teammember_spotlight
-          title:
+          headline:
           preheader:
           copy_html:
           image:
@@ -221,7 +221,7 @@ _structures:
         comment: Stacked cards with image on left and title & description on right.
         value:
           _type: link_list_with_images
-          title:
+          headline:
           links:
             - headline:
               excerpt:
@@ -239,9 +239,9 @@ _structures:
         comment: Events List
         value:
           _type: events
-          title:
+          headline:
           events:
-            - title:
+            - headline:
               date:
               copy_text:
               image:
@@ -253,9 +253,9 @@ _structures:
         comment: List of article links. Each article shows headline, excerpt, author and date
         value:
           _type: articles
-          title:
+          headline:
           articles:
-            - title:
+            - headline:
               url:
               copy_text:
               date:
@@ -266,9 +266,9 @@ _structures:
         comment: List of links, with the headline in the left column
         value:
           _type: link_list_with_dates
-          title:
+          headline:
           links:
-            - title:
+            - headline:
               url:
               date:
   slides:

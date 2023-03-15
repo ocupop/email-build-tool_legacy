@@ -14,7 +14,7 @@
         <tr>
           <td class="gutter" style="width:{{page.spacing.gutter-width}}px;"></td>
           <td style="padding-top:50px;padding-bottom:70px;text-align:center;">
-            <h1 style="font-family:Verdana,Arial,sans-serif,'Chakra Petch';font-size:30px;margin-top:10px;margin-bottom:25px;">{{section.title}}</h1>
+            <h1 style="font-family:Verdana,Arial,sans-serif,'Chakra Petch';font-size:30px;margin-top:10px;margin-bottom:25px;">{{section.headline}}</h1>
 
             {% for link in section.links %}
               <table width="100%" cellspacing="0" cellpadding="0" bgcolor="#f8f8f6">
@@ -27,7 +27,7 @@
                   <table width="{{leftcol_width}}" align="left" cellspacing="0" cellpadding="0" border="0" class="image-table responsive-table" style="width:leftcol_widthpx;">
                     <tr>
                       <td valign="top" style="width: leftcol_widthpx;">
-                        <img src="{{link.image}}" width="{{leftcol_width}}" height="{{leftcol_width}}" style="display:block;" alt="{{link.title}}">
+                        <img src="{{link.image}}" width="{{leftcol_width}}" height="{{leftcol_width}}" style="display:block;" alt="{{link.headline}}">
                       </td>
                     </tr>
                   </table>

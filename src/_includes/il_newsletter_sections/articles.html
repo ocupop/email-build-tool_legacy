@@ -6,7 +6,7 @@
         <tr>
           <td class="gutter" style="width:{{page.spacing.gutter-width}}px;"></td>
           <td style="padding-top:30px;padding-bottom:50px;">
-            <h1 style="font-family:Verdana,Arial,sans-serif,'Chakra Petch';font-size:30px;margin-top:10px;margin-bottom:30px;text-align:center;">{{section.title}}</h1>
+            <h1 style="font-family:Verdana,Arial,sans-serif,'Chakra Petch';font-size:30px;margin-top:10px;margin-bottom:30px;text-align:center;">{{section.headline}}</h1>
 
             {% for article in section.articles %}
 
@@ -14,7 +14,7 @@
                 <tr>
                   <td style="padding:25px;font-family:Arial,Helvetica,sans-serif,Averta;">
                     <h2 style="font-weight:normal;margin-top:0;margin-bottom: 3px;font-family:Verdana,Arial,sans-serif,'Chakra Petch';font-size:19px;">
-                      <a href="{{article.url}}" style="color:#2c2c30;text-decoration:none;">{{article.title}}</a>
+                      <a href="{{article.url}}" style="color:#2c2c30;text-decoration:none;">{{article.headline}}</a>
                     </h2>
                     <p style="margin-top: 3px;">{{article.copy_text}}</p>
                     <table>

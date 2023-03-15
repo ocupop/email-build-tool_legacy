@@ -16,7 +16,7 @@
             <div style="text-align:right;" class="calendar-icon">
               <img src="https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460705/upcoming-event-icon.gif?1678460705" alt="calendar" style="display:inine-block;">
             </div>
-            <h1 style="font-family:Verdana,Arial,sans-serif,'Chakra Petch';font-size:30px;margin-top:16px;margin-bottom:33px;">{{section.title}}</h1>
+            <h1 style="font-family:Verdana,Arial,sans-serif,'Chakra Petch';font-size:30px;margin-top:16px;margin-bottom:33px;">{{section.headline}}</h1>
 
             {% for event in section.events %}
 
@@ -31,7 +31,7 @@
                   <table width="{{leftcol_width}}" align="left" cellspacing="0" cellpadding="0" border="0" class="responsive-table" style="width:{{leftcol_width}}px;">
                     <tr>
                       <td valign="top" style="width: {{leftcol_width}}px;padding-bottom:20px;" >
-                        <img src="{{event.image}}" width="{{leftcol_width}}" style="display:block;" alt="{{event.title}}">
+                        <img src="{{event.image}}" width="{{leftcol_width}}" style="display:block;" alt="{{event.headline}}">
                       </td>
                     </tr>
                   </table>
@@ -48,7 +48,7 @@
                         </div>
                         <h2 style="font-family:Arial,Helvetica,sans-serif,Averta;color:#2c2c30;font-size:18px;margin-top:4px;margin-bottom:4px;font-weight:normal;">
                           <a href="#" style="color:#2c2c30;text-decoration:none;">
-                            {{event.title}}
+                            {{event.headline}}
                           </a>
                         </h2>
                         <div style="">
