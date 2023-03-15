@@ -58,8 +58,8 @@ data_config:
 _inputs:
   permalink:
     comment: proper permalink format example:// /about/team
-  example_input_1:
-    label: This Input Should Be A WYSIWYG
+  copy_html:
+    label: Copy
     type: html
   example_input_2:
     label: This Input Should Be an Image
@@ -133,7 +133,7 @@ _structures:
         value:
           _type: headline_copy_cta
           headline: Title of Section
-          copy: Lorem ipsum dolor sit amet, consect etuer adipiscing elit, sed diam non ummy nibh euismod tinciduntg ut laoreet dolore manga aliuam erat volutpat. Ut isi wnim ad moinim veniam, uis nnostruc exerci tation ullamcorper suspicit.
+          copy_html: Lorem ipsum dolor sit amet, consect etuer adipiscing elit, sed diam non ummy nibh euismod tinciduntg ut laoreet dolore manga aliuam erat volutpat. Ut isi wnim ad moinim veniam, uis nnostruc exerci tation ullamcorper suspicit.
           background-color: transparent
           image:
           cta:
