@@ -96,7 +96,7 @@ _inputs:
         text:
           - key: display_name
   il_newsletter_button_text_color:
-    label: Button Background Color
+    label: Button Text Color
     type: select
     options:
       values: _select_data.il_button_text_colors
