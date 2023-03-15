@@ -15,6 +15,7 @@ collections_config:
       - content
       - data
     output: true
+    permalink: /il-newsletters/:path/
     singular_name: Newsletter
     singular_key: title
     description: The Innovation Lab Newsletter Email
