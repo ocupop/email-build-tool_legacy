@@ -13,18 +13,19 @@
             <div style="font-family:Arial,Helvetica,sans-serif,Averta;font-size:20px;line-height:1.35;">
             <p>{{section.copy_html}}</p>
             </div>
-            {% if section.cta.url %}
-            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="rounded-button-table" style="margin:auto;">
+
+            {% if section.cta_button.url %}
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="rounded-button-table">
               <tr>
-                <td style="padding-top:20px;" align="middle">
+                <td style="padding-top:45px;" align="middle">
                   <div>
                     <!--[if mso]>
-                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://lab.cr.org/build-with-us/" style="height:50px;v-text-anchor:middle;width:{{section.cta.width}}px;" arcsize="50%" strokecolor="{{section.cta.background-color}}" fillcolor="{{section.cta.background-color}}">
+                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://lab.cr.org/initiatives/" style="height:50px;v-text-anchor:middle;width:{{section.cta_button.button_width}}px;" arcsize="50%" strokecolor="{{section.cta_button.il_newsletter_button_bkg_color}}" fillcolor="{{section.cta_button.il_newsletter_button_bkg_color}}">
                         <w:anchorlock/>
-                        <center style="color:{{section.cta.text-color}};font-family:Helvetica, Arial,sans-serif;font-size:20px;line-height:20px;">{{section.cta.label}}</center>
+                        <center style="color:{{section.cta_button.il_newsletter_button_text_color}};font-family:Helvetica, Arial,sans-serif;font-size:20px;line-height:20px;">{{section.cta_button.label}}</center>
                       </v:roundrect>
                     <![endif]-->
-                    <a href="{{section.cta.url}}" style="background-color:{{section.cta.background-color}};border:1px solid {{section.cta.background-color}};border-radius:22px;color:{{section.cta.text-color}};display:inline-block;font-family:Arial,Helvetica,sans-serif,Averta;font-size:24px;line-height:44px;text-align:center;text-decoration:none;width:{{section.cta.width}}px;-webkit-text-size-adjust:none;mso-hide:all;">{{section.cta.label}}</a>
+                    <a href="{{section.cta_button.url}}" style="background-color:{{section.cta_button.il_newsletter_button_bkg_color}};border:1px solid {{section.cta_button.il_newsletter_button_bkg_color}};border-radius:22px;color:{{section.cta_button.il_newsletter_button_text_color}};display:inline-block;font-family:Arial,Helvetica,sans-serif,Averta;font-size:24px;line-height:44px;text-align:center;text-decoration:none;width:{{section.cta_button.button_width}}px;-webkit-text-size-adjust:none;mso-hide:all;">{{section.cta_button.label}}</a>
                   </div>
                 </td>
               </tr>

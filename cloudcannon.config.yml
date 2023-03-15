@@ -63,12 +63,20 @@ _inputs:
     type: html
   left_column_percent:
     label: Left column percent
-    comment: percentage width of the content area
+    comment: Percentage width of the left column relative to the content width.
     type: range
     options:
       step: 1
       max: 100
       min: 0
+  button_width:
+    label: Button Width
+    comment: Fixed Pixel width of the button. (Required for display in MS Outlook.)
+    type: range
+    options:
+      step: 1
+      max: 50
+      min: 500
   il_newsletter_background_color:
     label: Background Color
     type: select
@@ -78,26 +86,41 @@ _inputs:
       preview:
         text:
           - key: display_name
-        subtext:
-          - key: key
-
-  example_input_4:
-    label: This Input Should Be an Multi Select
-    type: multiselect
+  il_newsletter_button_bkg_color:
+    label: Button Background Color
+    type: select
     options:
-      values:
-        - Wisconsin
-        - Minnesota
-        - north Dakota
-        - Iowa
-        - Illinois
-        - South Dakota
-  example_cards:
-  page_blocks:
-    label: Dynamic page blocks
-    type: array
+      values: _select_data.il_button_bg_colors
+      value_key: key
+      preview:
+        text:
+          - key: display_name
+  il_newsletter_button_text_color:
+    label: Button Background Color
+    type: select
     options:
-      structures: _structures.dynamic_blocks # This structure is defined below under "_structures"
+      values: _select_data.il_button_text_colors
+      value_key: key
+      preview:
+        text:
+          - key: display_name
+  # example_input_4:
+  #   label: This Input Should Be an Multi Select
+  #   type: multiselect
+  #   options:
+  #     values:
+  #       - Wisconsin
+  #       - Minnesota
+  #       - north Dakota
+  #       - Iowa
+  #       - Illinois
+  #       - South Dakota
+  # example_cards:
+  # page_blocks:
+  #   label: Dynamic page blocks
+  #   type: array
+  #   options:
+  #     structures: _structures.dynamic_blocks # This structure is defined below under "_structures"
   il_newsletter_sections:
     label: Innovation Lab Newsletter
     type: array
@@ -119,6 +142,8 @@ _select_data:
       display_name: Dark Gray
     - key: '#aacb65'
       display_name: Green
+    - key: '#cc0000'
+      display_name: Red
   il_button_text_colors:
     - key: '#f8f8f6'
       display_name: Light Gray
@@ -126,6 +151,8 @@ _select_data:
       display_name: Dark Gray
     - key: '#aacb65'
       display_name: Green
+    - key: '#0000CC'
+      display_name: Blue
 
 
 
@@ -174,22 +201,6 @@ _structures:
             background-color: '#aacb65'
             text-color: '#2c2c30'
             width: 177
-      - label: Link Card list with Images
-        icon: view_list
-        comment: Stacked cards with image on left and title & description on right.
-        value:
-          _type: link_list_with_images
-          headline:
-          cta:
-            label: Explore All Initiatives
-            url: https://lab.cr.org/initiatives/
-            background-color: '#2c2c30'
-            text-color: '#aacb65'
-            width: 177
-          cards:
-            - headline:
-              description:
-              image:
       - label: Team Member Spotlight
         icon: account_circle
         comment: Features a team member with an image
@@ -204,27 +215,64 @@ _structures:
             image_src: https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460704/spotlight-portrait.jpg?1678460704
             image_caption: Firstname Muchlongerlastname
             image_alt: "Image of this person"
-            icon_image: https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460700/spotlight-eye.gif?1678460700
+          icon_image: https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460700/spotlight-eye.gif?1678460700
           left_column_percent: 33
           il_newsletter_background_color: '#f8f8f6'
+      - label: Link Card list with Images
+        icon: view_list
+        comment: Stacked cards with image on left and title & description on right.
+        value:
+          _type: link_list_with_images
+          title: Featured Initiatives
+          links:
+            - image: https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460701/featured-initiative-1.jpg?1678460701
+              title: Fight for Fair Internet
+              copy_text: We worked with consumers to get data needed to make broadband more accessible and affordable.
+              url: https://lab.stage.consumerreports.org/initiatives/fight-for-fair-internet/
+          cta_button:
+            label: Explore All Initiatives
+            url: https://lab.cr.org/initiatives/
+            il_newsletter_button_bkg_color: '#2c2c30'
+            il_newsletter_button_text_color: '#aacb65'
+            button_width: 285
+            left_column_percent: 33
       - label: Events
         icon: event
         comment: Events List
         value:
           _type: events
-          image:
+          title: Upcoming Events
+          events:
+            - title: Lorem Ipsum Conference
+              date: April 12, 2023
+              copy_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+              image: https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460701/event-image-fpo.jpg?1678460701
+              cta_label: Learn more
+              cta_url: #
+
       - label: Articles
         icon: article
         comment: Single Column Content Section
         value:
           _type: articles
-          block_html:
+          title: CR Innovation Blog
+          articles:
+            - title: Article Title
+              url: #
+              copy_text: Lorem ipsum dolor sit amet
+              date: January 1, 2023
+              author_name: John Doe
+              author_image: https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460700/profile-pic-ginny-fahs.png?1678460700
       - label: Links list right, headline left
         icon: link
         comment: Two Column Images
         value:
           _type: link_list_with_dates
-          images:
+          title: Recent Research from CR
+          links:
+            - title: 'P2P Payment Apps: A Case Study fora Digital Finance Standard'
+              url: https://www.consumerreports.org//electronics-computers/cell-phones/google-pixel-6a-wrong-fingerprint-can-unlock-a2538109870/
+              date: January 24, 2023
   slides:
     values:
       - label: Slide

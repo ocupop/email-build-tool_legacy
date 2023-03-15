@@ -1,4 +1,4 @@
-{% assign left_column_percent = 33 %}
+{% assign left_column_percent = section.left_column_percent | default: 33 %}
 {% assign leftPercent = left_column_percent | times: 0.01 %}
 {% assign rightPercent = 100 | minus: left_column_percent | times: 0.01 %}
 
@@ -14,67 +14,20 @@
         <tr>
           <td class="gutter" style="width:{{page.spacing.gutter-width}}px;"></td>
           <td style="padding-top:50px;padding-bottom:70px;text-align:center;">
-            <h1 style="font-family:Verdana,Arial,sans-serif,'Chakra Petch';font-size:30px;margin-top:10px;margin-bottom:25px;">Featured Initiatives</h1>
+            <h1 style="font-family:Verdana,Arial,sans-serif,'Chakra Petch';font-size:30px;margin-top:10px;margin-bottom:25px;">{{section.title}}</h1>
 
-            <!-- INITIATIVE 1 -->
-            <table width="100%" cellspacing="0" cellpadding="0" bgcolor="#f8f8f6">
-             <tr>
-               <td style="text-align:left">
-                 <!--[if mso ]><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                 <tr>
-                 <td width="{{leftcol_width}}" valign="top"><![endif]-->
-
-                 <table width="{{leftcol_width}}" align="left" cellspacing="0" cellpadding="0" border="0" class="image-table responsive-table" style="width:leftcol_widthpx;">
-                   <tr>
-                     <td valign="top" style="width: leftcol_widthpx;">
-                       <img src="https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460701/featured-initiative-1.jpg?1678460701" width="{{leftcol_width}}" height="{{leftcol_width}}" style="display:block;" alt="">
-                     </td>
-                   </tr>
-                 </table>
-
-                 <!--[if mso ]></td>
-                 <td width="{{rightcol_width}}" valign="top"><![endif]-->
-
-                 <table width="{{rightcol_width}}" align="right" cellspacing="0" cellpadding="0" border="0" class="content-table responsive-table" style="width:"{{rightcol_width}}"px;">
-                   <tr>
-                     <td width="{{rightcol_width}}" style="padding:10px;padding-top:26px;font-family:Arial,Helvetica,sans-serif,Averta;color:#2c2c30;" valign="top">
-
-                      <h2 style="font-family:Arial,Helvetica,sans-serif,Averta;color:#2c2c30;font-size:20px;font-weight:normal;margin-top:0;">
-                        <a href="https://lab.stage.consumerreports.org/initiatives/fight-for-fair-internet/" style="text-decoration:none;color:#2c2c30;">
-                          Fight for Fair Internet
-                        </a>
-                      </h2>
-
-                      <div style="font-family:Arial,Helvetica,sans-serif,Averta;">
-                         <p>We worked with consumers to get data needed to make broadband more accessible and affordable.</p>
-                       </div>
-                     </td>
-                   </tr>
-                 </table>
-
-                 <!--[if mso ]></td>
-                 </tr>
-                 </table><![endif]-->
-
-               </td>
-             </tr>
-            </table>
-            <!-- END INITIATIVE 1 -->
-
-            <table class="spacer" width="100%" cellspacing="0" cellpadding="0" ><tr><td style="height:20px;"></td></tr></table>
-
-            <!-- INITIATIVE 2 -->
-            <table width="100%" cellspacing="0" cellpadding="0" style="background-color:#f8f8f6">
+            {% for link in section.links %}
+              <table width="100%" cellspacing="0" cellpadding="0" bgcolor="#f8f8f6">
               <tr>
                 <td style="text-align:left">
                   <!--[if mso ]><table width="100%" cellspacing="0" cellpadding="0" border="0">
                   <tr>
                   <td width="{{leftcol_width}}" valign="top"><![endif]-->
 
-                  <table width="{{leftcol_width}}" align="left" cellspacing="0" cellpadding="0" border="0" class="image-table responsive-table" style="width:{{leftcol_width}}px;">
+                  <table width="{{leftcol_width}}" align="left" cellspacing="0" cellpadding="0" border="0" class="image-table responsive-table" style="width:leftcol_widthpx;">
                     <tr>
-                      <td valign="top" style="width: {{leftcol_width}}px;" >
-                        <img src="https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460701/featured-initiative-2.jpg?1678460701" width="{{leftcol_width}}" height="{{leftcol_width}}"  style="display:block;" alt="">
+                      <td valign="top" style="width: leftcol_widthpx;">
+                        <img src="{{link.image}}" width="{{leftcol_width}}" height="{{leftcol_width}}" style="display:block;" alt="{{link.title}}">
                       </td>
                     </tr>
                   </table>
@@ -82,17 +35,18 @@
                   <!--[if mso ]></td>
                   <td width="{{rightcol_width}}" valign="top"><![endif]-->
 
-                  <table width="{{rightcol_width}}" align="right" cellspacing="0" cellpadding="0" border="0" class="content-table responsive-table" style="width:{{rightcol_width}}px;">
+                  <table width="{{rightcol_width}}" align="right" cellspacing="0" cellpadding="0" border="0" class="content-table responsive-table" style="width:"{{rightcol_width}}"px;">
                     <tr>
                       <td width="{{rightcol_width}}" style="padding:10px;padding-top:26px;font-family:Arial,Helvetica,sans-serif,Averta;color:#2c2c30;" valign="top">
+
                         <h2 style="font-family:Arial,Helvetica,sans-serif,Averta;color:#2c2c30;font-size:20px;font-weight:normal;margin-top:0;">
-                          <a href="https://lab.stage.consumerreports.org/initiatives/permission-slip/" style="text-decoration:none;color:#2c2c30;">
-                            Permission Slip
+                          <a href="{{link.url}}" style="text-decoration:none;color:#2c2c30;">
+                            {{link.title}}
                           </a>
                         </h2>
 
                         <div style="font-family:Arial,Helvetica,sans-serif,Averta;">
-                          <p>Exploring how to enable consumers to meaningfully exercise their data rights.</p>
+                          <p>{{link.copy_text}}</p>
                         </div>
                       </td>
                     </tr>
@@ -104,24 +58,30 @@
 
                 </td>
               </tr>
-            </table>
-            <!-- END INITIATIVE 2 -->
+              </table>
+              <!-- END INITIATIVE -->
+              {% unless forloop.last %}
+              <table class="spacer" width="100%" cellspacing="0" cellpadding="0" ><tr><td style="height:20px;"></td></tr></table>
+              {% endunless %}
+            {% endfor %}
 
+            {% if section.cta_button.url %}
             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="rounded-button-table">
               <tr>
                 <td style="padding-top:45px;" align="middle">
                   <div>
                     <!--[if mso]>
-                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://lab.cr.org/initiatives/" style="height:50px;v-text-anchor:middle;width:285px;" arcsize="50%" strokecolor="#2c2c30" fillcolor="#2c2c30">
+                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://lab.cr.org/initiatives/" style="height:50px;v-text-anchor:middle;width:{{section.cta_button.button_width}}px;" arcsize="50%" strokecolor="{{section.cta_button.il_newsletter_button_bkg_color}}" fillcolor="{{section.cta_button.il_newsletter_button_bkg_color}}">
                         <w:anchorlock/>
-                        <center style="color:#aacb65;font-family:Helvetica, Arial,sans-serif;font-size:20px;line-height:20px;">Explore All Initiatives</center>
+                        <center style="color:{{section.cta_button.il_newsletter_button_text_color}};font-family:Helvetica, Arial,sans-serif;font-size:20px;line-height:20px;">{{section.cta_button.label}}</center>
                       </v:roundrect>
                     <![endif]-->
-                    <a href="https://lab.cr.org/initiatives/" style="background-color:#2c2c30;border:1px solid #2c2c30;border-radius:22px;color:#aacb65;display:inline-block;font-family:Arial,Helvetica,sans-serif,Averta;font-size:24px;line-height:44px;text-align:center;text-decoration:none;width:285px;-webkit-text-size-adjust:none;mso-hide:all;">Explore All Initiatives</a>
+                    <a href="{{section.cta_button.url}}" style="background-color:{{section.cta_button.il_newsletter_button_bkg_color}};border:1px solid {{section.cta_button.il_newsletter_button_bkg_color}};border-radius:22px;color:{{section.cta_button.il_newsletter_button_text_color}};display:inline-block;font-family:Arial,Helvetica,sans-serif,Averta;font-size:24px;line-height:44px;text-align:center;text-decoration:none;width:{{section.cta_button.button_width}}px;-webkit-text-size-adjust:none;mso-hide:all;">{{section.cta_button.label}}</a>
                   </div>
                 </td>
               </tr>
             </table>
+            {% endif %}
 
           </td>
           <td class="gutter" style="width:{{page.spacing.gutter-width}}px;"></td>
