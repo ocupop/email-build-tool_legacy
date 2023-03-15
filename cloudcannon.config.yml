@@ -125,7 +125,7 @@ _structures:
         value:
           _id: slideshow
           slides: []
-  il_newsletter_sections:
+  il_newsletter_sections: # see the "_input" config for "il_newsletter_sections" above.
     values:
       - label: Simple headline, text, image and CTA x
         icon: format_align_center
