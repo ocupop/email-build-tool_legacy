@@ -1,13 +1,20 @@
-<table class="spotlight" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#f8f8f6" style="min-width:100%;">
+{% assign gap = 20 %}
+{% assign left_column_percent = section.left_column_percent | default: 33 %}
+{% assign leftPercent = left_column_percent | times: 0.01 %}
+{% assign rightPercent = 100 | minus: left_column_percent | times: 0.01 %}
+{% assign leftcol_width = page.spacing.container-width | minus:page.spacing.gutter-width | minus:page.spacing.gutter-width | times: leftPercent | floor %}
+{% assign rightcol_width = page.spacing.container-width | minus:page.spacing.gutter-width | minus:page.spacing.gutter-width | minus:gap | minus:leftcol_width | floor %}
+
+<table class="spotlight" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="{{section.il_newsletter_background_color}}" style="min-width:100%;">
   <tr>
     <td align="center">
 
-      <table width="600" cellspacing="0" cellpadding="0" border="0" class="responsive-table">
+      <table width="{{page.spacing.container-width}}" cellspacing="0" cellpadding="0" border="0" class="responsive-table">
         <tr>
-          <td class="gutter" style="width:40px;"></td>
+          <td class="gutter" style="width:{{page.spacing.gutter-width}}px;"></td>
           <td style="padding-top:28px;padding-bottom:20px;">
 
-            <img src="https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460700/spotlight-eye.gif?1678460700" width="106" alt="Innovator Spotlight" class="eye" style="display:block;padding-left: 21px">
+            <img src="{{ section.icon_image }}" width="106" alt=" alt="{{section.preheader}}" class="eye" style="display:block;padding-left: 21px">
 
             <!-- INNOVATOR SPOTLIGHT TABLE -->
             <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#f8f8f6" >
@@ -15,17 +22,17 @@
                 <td style="padding-top:10px;">
                   <!--[if mso ]><table width="100%" cellspacing="0" cellpadding="0" border="0">
                   <tr>
-                  <td width="147" valign="top"><![endif]-->
+                  <td width="{{leftcol_width}}" valign="top"><![endif]-->
 
-                  <table width="147" align="left" cellspacing="0" cellpadding="0" class="image-table responsive-table" style="width:147px;">
+                  <table width="{{leftcol_width}}" align="left" cellspacing="0" cellpadding="0" class="image-table responsive-table" style="width:{{leftcol_width}}px;">
                     <tr>
-                      <td valign="top" align="center" style="width: 147px;font-family:Arial,Helvetica,sans-serif,Averta;padding-bottom:30px;" >
-                        <img src="https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460704/spotlight-portrait.jpg?1678460704" style="display:block;" alt="First Name and Last Name" width="147">
+                      <td valign="top" align="center" style="width: {{leftcol_width}}px;font-family:Arial,Helvetica,sans-serif,Averta;padding-bottom:30px;" >
+                        <img src="{{ section.image_caption }}" style="display:block;" alt="{{section.image_caption}}" width="{{leftcol_width}}">
 
-                        <table cellspacing="0" cellpadding="0" width="147">
+                        <table cellspacing="0" cellpadding="0" width="{{leftcol_width}}">
                           <tr>
                             <td style="padding:5px 12px;background-color:#2c2c30;color:#FFFFFF;font-size:12px;width:123px;font-family:Arial,Helvetica,sans-serif,Averta;">
-                              Firstname Muchlongerlastname
+                              {{ section.name }}
                             </td>
                           </tr>
                         </table>
@@ -35,17 +42,16 @@
                   </table>
 
                   <!--[if mso ]></td>
-                  <td width="40"></td>
-                  <td width="330" valign="top"><![endif]-->
+                  <td width="{{gap}}"></td>
+                  <td width="{{rightcol_width}}" valign="top"><![endif]-->
 
-                  <table width="330" align="right" cellspacing="0" cellpadding="0" border="0" class="content-table responsive-table" style="width:330px;">
+                  <table width="{{rightcol_width}}" align="right" cellspacing="0" cellpadding="0" border="0" class="content-table responsive-table" style="width:{{rightcol_width}}px;">
                     <tr>
-                      <td width="330" style="font-family:Arial,Helvetica,sans-serif,Averta;margin-top: 2px;margin-bottom:0;padding-bottom:30px;" valign="top">
-                        <h1 style="font-family:Arial,Helvetica,sans-serif,Averta;font-size:16px;font-weight:normal;margin:0;color:#2c2c30;">Innovator Spotlight</h1>
-                        <h2 style="font-family:Verdana,Arial,sans-serif,'Chakra Petch';font-size:30px;margin:0;color:#2c2c30;">Lorem Ipsum</h2>
+                      <td width="{{rightcol_width}}" style="font-family:Arial,Helvetica,sans-serif,Averta;margin-top: 2px;margin-bottom:0;padding-bottom:30px;" valign="top">
+                        <h1 style="font-family:Arial,Helvetica,sans-serif,Averta;font-size:16px;font-weight:normal;margin:0;color:#2c2c30;"> {{ section.preheader }}</h1>
+                        <h2 style="font-family:Verdana,Arial,sans-serif,'Chakra Petch';font-size:30px;margin:0;color:#2c2c30;"> {{ section.title }}</h2>
                         <div style="font-size: 16px; margin-top: 0;font-family:Arial,Helvetica,sans-serif,Averta;color:#2c2c30;">
-                          <p>We've got you covered when it comes to picking a Medicare Advantage plan. If you're eligible for Medicare, Bright Health has plans that may fit your life and budget.</p>
-                          <p>Ut wisi enim ad minim veniam, quis no studmen, consetetuer adispiscindg elig, sed diam.</p>
+                          {{ section.copy_html }}
                         </div>
                       </td>
                     </tr>
@@ -61,7 +67,7 @@
             <!-- END INNOVATOR SPOTLIGHT TABLE -->
 
           </td>
-          <td class="gutter" style="width:40px;"></td>
+          <td class="gutter" style="width:{{page.spacing.gutter-width}}px;"></td>
         </tr>
       </table>
 

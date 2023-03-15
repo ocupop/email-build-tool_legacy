@@ -61,10 +61,6 @@ _inputs:
   copy_html:
     label: Copy
     type: html
-  example_input_2:
-    label: This Input Should Be an Image
-    type: image
-
   il_newsletter_background_color:
     label: Background Color
     type: select
@@ -74,6 +70,8 @@ _inputs:
       preview:
         text:
           - key: display_name
+        subtext:
+          - key: key
 
   example_input_4:
     label: This Input Should Be an Multi Select
@@ -106,6 +104,20 @@ _select_data:
       display_name: Green
     - key: 'transparent'
       display_name: Transparent
+  il_button_bg_colors:
+    - key: '#f8f8f6'
+      display_name: Light Gray
+    - key: '#2c2c30'
+      display_name: Dark Gray
+    - key: '#aacb65'
+      display_name: Green
+  il_button_text_colors:
+    - key: '#f8f8f6'
+      display_name: Light Gray
+    - key: '#2c2c30'
+      display_name: Dark Gray
+    - key: '#aacb65'
+      display_name: Green
 
 
 
@@ -175,8 +187,18 @@ _structures:
         comment: Features a team member with an image
         value:
           _type: teammember_spotlight
-          name:
+          title: Lorem Ipsum
+          preheader: Innovator Spotlight
+          copy_html: >-
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <p>Ut wisi enim ad minim veniam, quis no studmen, consetetuer adispiscindg elig, sed diam.</p>
           image:
+            image_src: https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460704/spotlight-portrait.jpg?1678460704
+            image_caption: Firstname Muchlongerlastname
+            image_alt: "Image of this person"
+            icon_image: https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460700/spotlight-eye.gif?1678460700
+          left_column_percent: 33
+          il_newsletter_background_color: '#f8f8f6'
       - label: Events
         icon: event
         comment: Events List

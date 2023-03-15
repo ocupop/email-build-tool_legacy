@@ -72,7 +72,7 @@ spacing:
           .responsive-image {
               width: 100% !important;
           }
-          .gutter{width:20px !important;}
+          .gutter{width:{{page.spacing.gutter-width-mobile}}px !important;}
 
           .header .logo-inner{ margin:auto; }
           .header .nav-inner{ margin:auto; }
@@ -124,7 +124,7 @@ spacing:
 
         <table cellspacing="0" cellpadding="0" border="0" class="logo-inner">
           <tr>
-            <td class="gutter" style="width:40px;"></td>
+            <td class="gutter" style="width:{{page.spacing.gutter-width}}px;"></td>
             <td class="logo" style="padding-right:20px;" >
               <a href="https://www.cr.org" style="text-decoration:none;">
                 <img src="https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678464911/logo.png?1678464911" width="180"  style="display: block;"/>
@@ -134,7 +134,7 @@ spacing:
             <td class="sitename" style="padding-left:20px;">
               <a href="https://lab.cr.org" style="font-family:Arial,Helvetica,sans-serif,Averta;font-size:24px;color:#FFFFFF;text-decoration:none;"><b>Innovation Lab</b></a>
             </td>
-            <td class="gutter" style="width:40px;"></td>
+            <td class="gutter" style="width:{{page.spacing.gutter-width}}px;"></td>
         </table>
 
       </td>
@@ -172,13 +172,19 @@ spacing:
 
 
   <!-- FOOTER -->
+  {% assign left_column_percent = 50 %}
+  {% assign leftPercent = left_column_percent | times: 0.01 %}
+  {% assign rightPercent = 100 | minus: left_column_percent | times: 0.01 %}
+  {% assign leftcol_width = page.spacing.container-width | minus:page.spacing.gutter-width  | minus:page.spacing.gutter-width | times: leftPercent | floor %}
+  {% assign rightcol_width = page.spacing.container-width | minus:page.spacing.gutter-width  | minus:page.spacing.gutter-width | minus: leftcol_width %}
+
   <table class="footer" width="100%" cellspacing="0" cellpadding="0" border="0" style="min-width:100%;background-color:#2c2c30;color:#FFFFFF;">
     <tr>
       <td align="center">
 
-        <table width="600" cellspacing="0" cellpadding="0" border="0" class="responsive-table">
+        <table width="{{page.spacing.container-width}}" cellspacing="0" cellpadding="0" border="0" class="responsive-table">
           <tr>
-            <td class="gutter" style="width:40px;"></td>
+            <td class="gutter" style="width:{{page.spacing.gutter-width}}px;"></td>
 
             <td class="footer-inner" style="padding-top:35px;padding-bottom:35px;">
 
@@ -186,9 +192,9 @@ spacing:
 
                 <!--[if mso ]><table width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tr>
-                <td width="255" valign="top"><![endif]-->
+                <td width="{{leftcol_width}}" valign="top"><![endif]-->
 
-                <table width="255" align="left" cellspacing="0" cellpadding="0" border="0" class="responsive-table logo" style="width:255px;">
+                <table width="{{leftcol_width}}" align="left" cellspacing="0" cellpadding="0" border="0" class="responsive-table logo" style="width:{{leftcol_width}}px;">
                   <tr>
                     <td valign="top" style="padding-top:0px;padding-bottom:0px;">
                       <img src="//assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678464911/logo.png?1678464911" width="154" style="display: block;"/>
@@ -197,11 +203,11 @@ spacing:
                 </table>
 
                 <!--[if mso ]></td>
-                <td width="255" valign="top"><![endif]-->
+                <td width="{{rightcol_width}}" valign="top"><![endif]-->
 
-                <table width="255" align="right" cellspacing="0" cellpadding="0" border="0" class="responsive-table socialmedia" style="width:255px;">
+                <table width="{{rightcol_width}}" align="right" cellspacing="0" cellpadding="0" border="0" class="responsive-table socialmedia" style="width:{{rightcol_width}}px;">
                   <tr>
-                    <td width="255" style="color:#FFFFFF;padding-top:8px;" valign="top" align="right">
+                    <td style="color:#FFFFFF;padding-top:8px;" valign="top" align="right">
                         <table cellspacing="0" cellpadding="0" border="0" class="socialmedia-inner">
                           <tr>
                             <td style="padding-left:20px;">
@@ -243,16 +249,16 @@ spacing:
               <tr><td style="padding-top:20px;font-size:12px;">
 
 
-                  <table width="100%" align="center" cellspacing="0" cellpadding="0" border="0" class="" style="width:100%;">
-                    <tr>
-                      <td valign="top" style="padding-top:0px;padding-bottom:0px;color:#767677;">
-                        &copy; 2023 Consumer Reports, Inc.
-                      </td>
-                      <td width="" style="color:#FFFFFF;color:#767677;" valign="top" align="right">
-                        <a href="{{ settings.site.unsubscribe_url }}" style="color:#767677;">Unsubscribe</a>
-                      </td>
-                    </tr>
-                  </table>
+                <table width="100%" align="center" cellspacing="0" cellpadding="0" border="0" style="width:100%;">
+                  <tr>
+                    <td valign="top" style="padding-top:0px;padding-bottom:0px;color:#767677;">
+                      &copy; {{ 'now' | date: "%Y" }} Consumer Reports, Inc.
+                    </td>
+                    <td style="color:#FFFFFF;color:#767677;" valign="top" align="right">
+                      <a href="{% raw %}{{ settings.site.unsubscribe_url }}{% endraw %}" style="color:#767677;">Unsubscribe</a>
+                    </td>
+                  </tr>
+                </table>
 
 
 
@@ -260,7 +266,7 @@ spacing:
 
             </td>
 
-            <td class="gutter" style="width:40px;"></td>
+            <td class="gutter" style="width:{{page.spacing.gutter-width}}px;"></td>
           </tr>
         </table>
       </td>

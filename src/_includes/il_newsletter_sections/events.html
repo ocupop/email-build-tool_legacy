@@ -1,16 +1,23 @@
+{% assign gap = 20 %}
+{% assign left_column_percent = 33 %}
+{% assign leftPercent = left_column_percent | times: 0.01 %}
+{% assign rightPercent = 100 | minus: left_column_percent | times: 0.01 %}
+{% assign leftcol_width = page.spacing.container-width | minus:page.spacing.gutter-width | minus:page.spacing.gutter-width | times: leftPercent | floor %}
+{% assign rightcol_width = page.spacing.container-width | minus:page.spacing.gutter-width | minus:page.spacing.gutter-width | minus:gap | minus:leftcol_width | floor %}
+
 <table class="upcoming-events" width="100%" cellspacing="0" cellpadding="0" border="0" style="min-width:100%;">
   <tr>
     <td align="center">
 
-
-      <table width="600" cellspacing="0" cellpadding="0" border="0" class="responsive-table">
+      <table width="{{page.spacing.container-width}}" cellspacing="0" cellpadding="0" border="0" class="responsive-table">
         <tr>
-          <td class="gutter" style="width:40px;"></td>
+          <td class="gutter" style="width:{{page.spacing.gutter-width}}px;"></td>
           <td style="padding-top:50px;padding-bottom:50px;">
             <div style="text-align:right;" class="calendar-icon">
               <img src="https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460705/upcoming-event-icon.gif?1678460705" alt="calendar" style="display:inine-block;">
             </div>
             <h1 style="font-family:Verdana,Arial,sans-serif,'Chakra Petch';font-size:30px;margin-top:16px;margin-bottom:33px;">Upcoming Events</h1>
+
 
             <!-- EVENT 1 -->
             <table width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -18,23 +25,24 @@
                 <td style="text-align:left">
                   <!--[if mso ]><table width="100%" cellspacing="0" cellpadding="0" border="0">
                   <tr>
-                  <td width="152" valign="top"><![endif]-->
+                  <td width="{{leftcol_width}}" valign="top"><![endif]-->
 
-                  <table width="152" align="left" cellspacing="0" cellpadding="0" border="0" class="responsive-table" style="width:152px;">
+
+                  <table width="{{leftcol_width}}" align="left" cellspacing="0" cellpadding="0" border="0" class="responsive-table" style="width:{{leftcol_width}}px;">
                     <tr>
-                      <td valign="top" style="width: 152px;padding-bottom:20px;" >
-                        <img src="https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460701/event-image-fpo.jpg?1678460701" width="152"  style="display:block;" alt="">
+                      <td valign="top" style="width: {{leftcol_width}}px;padding-bottom:20px;" >
+                        <img src="https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460701/event-image-fpo.jpg?1678460701" width="{{leftcol_width}}"  style="display:block;" alt="">
                       </td>
                     </tr>
                   </table>
 
                   <!--[if mso ]></td>
-                  <td width="14"></td>
-                  <td width="344" valign="top"><![endif]-->
+                  <td width="{{gap}}"></td>
+                  <td width="{{rightcol_width}}" valign="top"><![endif]-->
 
-                  <table width="344" align="right" cellspacing="0" cellpadding="0" border="0" class="responsive-table" style="width:344px;">
+                  <table width="{{rightcol_width}}" align="right" cellspacing="0" cellpadding="0" border="0" class="responsive-table" style="width:{{rightcol_width}}px;">
                     <tr>
-                      <td width="344" style="padding-top: 2px;padding-bottom:30px;font-family:Arial,Helvetica,sans-serif,Averta;color:#2c2c30;" valign="top">
+                      <td width="{{rightcol_width}}" style="padding-top: 2px;padding-bottom:30px;font-family:Arial,Helvetica,sans-serif,Averta;color:#2c2c30;" valign="top">
                         <div style="font-family:Arial,Helvetica,sans-serif,Averta;font-size:15px;padding-bottom:6px;">
                           <img src="https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460699/icon-calendar.gif?1678460699" alt="date">&nbsp;&nbsp;April 12, 2023
                         </div>
@@ -75,23 +83,23 @@
                 <td style="text-align:left">
                   <!--[if mso ]><table width="100%" cellspacing="0" cellpadding="0" border="0">
                   <tr>
-                  <td width="152" valign="top"><![endif]-->
+                  <td width="{{leftcol_width}}" valign="top"><![endif]-->
 
-                  <table width="152" align="left" cellspacing="0" cellpadding="0" border="0" class="responsive-table" style="width:152px;">
+                  <table width="{{leftcol_width}}" align="left" cellspacing="0" cellpadding="0" border="0" class="responsive-table" style="width:{{leftcol_width}}px;">
                     <tr>
-                      <td valign="top" style="width: 152px;padding-bottom:20px;" >
-                        <img src="https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460701/event-image-fpo.jpg?1678460701" width="152"  style="display:block;" alt="">
+                      <td valign="top" style="width: {{leftcol_width}}px;padding-bottom:20px;" >
+                        <img src="https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460701/event-image-fpo.jpg?1678460701" width="{{leftcol_width}}"  style="display:block;" alt="">
                       </td>
                     </tr>
                   </table>
 
                   <!--[if mso ]></td>
-                  <td width="22"></td>
-                  <td width="358" valign="top"><![endif]-->
+                  <td width="{{gap}}"></td>
+                  <td width="{{rightcol_width}}" valign="top"><![endif]-->
 
-                  <table width="336" align="right" cellspacing="0" cellpadding="0" border="0" class="responsive-table" style="width:336px;">
+                  <table width="{{rightcol_width}}" align="right" cellspacing="0" cellpadding="0" border="0" class="responsive-table" style="width:{{rightcol_width}}px;">
                     <tr>
-                      <td width="336" style="padding-top: 2px;padding-bottom:30px;font-family:Arial,Helvetica,sans-serif,Averta;color:#2c2c30;" valign="top">
+                      <td width="{{rightcol_width}}" style="padding-top: 2px;padding-bottom:30px;font-family:Arial,Helvetica,sans-serif,Averta;color:#2c2c30;" valign="top">
                         <div style="font-family:Arial,Helvetica,sans-serif,Averta;font-size:15px;padding-bottom:6px;">
                           <img src="https://assets.nationbuilder.com/themes/640a18f322005f22ff810904/attachments/original/1678460699/icon-calendar.gif?1678460699" alt="date">&nbsp;&nbsp;April 12, 2023
                         </div>
@@ -126,7 +134,7 @@
             <!-- END EVENT 2 -->
 
           </td>
-          <td class="gutter" style="width:40px;"></td>
+          <td class="gutter" style="width:{{page.spacing.gutter-width}}px;"></td>
         </tr>
       </table>
 
