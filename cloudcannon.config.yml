@@ -61,6 +61,10 @@ _inputs:
   copy_html:
     label: Copy
     type: html
+  left_column_percent:
+    label: Left column percent
+    comment: percentage width of the content area
+    type: number
   il_newsletter_background_color:
     label: Background Color
     type: select
@@ -100,8 +104,8 @@ _select_data:
   il_bg_colors:
     - key: '#f8f8f6'
       display_name: Light Gray
-    - key: '#aacb65'
-      display_name: Green
+    # - key: '#aacb65'
+    #   display_name: Green
     - key: 'transparent'
       display_name: Transparent
   il_button_bg_colors:
