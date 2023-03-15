@@ -64,14 +64,17 @@ _inputs:
   example_input_2:
     label: This Input Should Be an Image
     type: image
+
   il_newsletter_background_color:
     label: Background Color
     type: select
     options:
-      values:
-        - light_gray
-        - Another Color
-        - Transparent
+      values: _select_data.il_bg_colors
+      value_key: key
+      preview:
+        text:
+          - key: display_name
+
   example_input_4:
     label: This Input Should Be an Multi Select
     type: multiselect
@@ -94,6 +97,18 @@ _inputs:
     type: array
     options:
       structures: _structures.il_newsletter_sections # This structure is defined below under "_structures"
+
+_select_data:
+  il_bg_colors:
+    - key: light_gray
+      display_name: Light Gray
+      hex: '#f8f8f6'
+    - key: green
+      display_name: Green
+      hex: '#aacb65'
+    - key: transparent
+      display_name: Transparent
+      hex: 'transparent'
 
 
 
