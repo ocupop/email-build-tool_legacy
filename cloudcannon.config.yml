@@ -9,7 +9,7 @@ paths:
 # https://cloudcannon.com/documentation/articles/defining-your-collections/?ssg=Jekyll
 collections_config:
   il-newlsletters:
-    path: _il-newsletters
+    # path: _innovation-lab-newsletters
     name: InnovationLab Newsletters
     description: The Innovation Lab Newsletter Email
     sort:

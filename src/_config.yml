@@ -31,9 +31,9 @@ placeholder_image: https://via.placeholder.com/1000x1000/333333/000000?text=Plac
 # (All CloudCannon CMS config is set in cloudcannon.config.yml)
 # ------------------------------------------------
 collections:
-  il-newsletters:
+  newsletters:
     output: true
-    permalink: /il-newsletters/:path/
+    permalink: /innovationlab-newsletters/:path/
   examples:
     output: true
     permalink: /examples/:path/
@@ -61,7 +61,7 @@ defaults:
       layout: sandbox
   -
     scope:
-      type: 'il-newsletters'
+      type: 'newsletters'
     values:
       layout: email
       # variable_name: value
