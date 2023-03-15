@@ -8,7 +8,7 @@ paths:
 
 # https://cloudcannon.com/documentation/articles/defining-your-collections/?ssg=Jekyll
 collections_config:
-  il-newlsletters:
+  newsletters:
     # path: _innovation-lab-newsletters
     name: InnovationLab Newsletters
     description: The Innovation Lab Newsletter Email
@@ -46,9 +46,9 @@ collections_config:
       - content
       - data
     output: true
-    subtext_key: role
-    # image_key: featured_image
-    # image_size: cover
+    preview:
+      subtext:
+        - key: title
     singular_name: Example
     singular_key: title
     disable_add: false
@@ -287,10 +287,3 @@ _structures:
             - headline:
               url:
               date:
-  slides:
-    values:
-      - label: Slide
-        icon: collections
-        value:
-          image:
-          caption:
