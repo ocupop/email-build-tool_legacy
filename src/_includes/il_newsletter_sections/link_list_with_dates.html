@@ -42,7 +42,7 @@
                             <a href="{{link.url}}" target="_blank" style="font-size:18px;color:#2c2c30;line-height: 1.2;display:block;">
                               {{link.headline}}
                             </a>
-                            <div class="date" style="color:#6b6b6b;font-size:16px;display:inline-block;margin-top:4px;">{{link.date}}</div>
+                            <div class="date" style="color:#6b6b6b;font-size:16px;display:inline-block;margin-top:4px;">{{link.date | date: "%B %e, %Y"}}</div>
                           </div>
                         {% endfor %}
 
