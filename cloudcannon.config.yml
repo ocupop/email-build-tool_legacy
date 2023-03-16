@@ -35,13 +35,20 @@ collections_config:
     singular_name: Newsletter
     singular_key: title
     icon: newspaper
+
     add_options:
-      - name: Create New
+      - name: New blank
         icon: add_box
+
     schemas:
       default:
-        name: "New Newsletter"
-        path: "schemas/newsletter_blank.md"
+        name: Blank
+        path: schemas/newsletter_blank.md
+        # create:
+        #   path: news/{date|year}/{date|month}/{slug}[count].md
+
+
+
     _inputs:
       layout:
         type: select
