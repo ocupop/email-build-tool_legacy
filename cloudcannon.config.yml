@@ -37,9 +37,9 @@ collections_config:
     icon: newspaper
 
     add_options:
-      - name: New blank
+      - name: Create new
         icon: add_box
-      - name: New Pre-populated
+      - name: Create from template
         icon: post_add
         schema: prepopulated
 
@@ -52,7 +52,10 @@ collections_config:
         path: src/_newsletters/_schemas/prepopulated.md
         # create:
         #   path: news/{date|year}/{date|month}/{slug}[count].md
-
+    filter:
+      exclude:
+        - schemas
+        - _schemas
 
 
     _inputs:
