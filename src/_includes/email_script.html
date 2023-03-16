@@ -35,13 +35,13 @@
       console.log("CC1 Length BEFORE = ",cc1.length)
       console.log("CC2 Length BEFORE = ",cc2.length)
       if(cc1){
-        for(var i=0;i < cc1.length;i++){
+        for(var i=cc1.length-1;i >= 0;i--){
           console.log('cc1 '+i,cc1[i]);
           cc1[i].remove();
         }
       }
       if(cc2){
-        for(var i=0;i < cc2.length;i++){
+        for(var i=cc2.length-1;i >= 0;i--){
           console.log('cc2 '+i,cc2[i]);
           cc2[i].remove();
         }
@@ -57,14 +57,14 @@
       console.log("CC1 Length AFTER = ",cc1.length)
       console.log("CC2 Length AFTER = ",cc2.length)
       if(cc1){
-        for(var i=0;i < cc1.length;i++){
-          console.log("Re-Add CC1 ",cc1[i])
+        for(var i=cc1.length-1;i >= 0;i--){
+          console.log("Re-Add CC1 "+i,cc1[i])
           document.body.appendChild(cc1[i]);
         }
       }
       if(cc2){
-        for(var i=0;i < cc2.length;i++){
-          console.log("Re-Add cc2 ",cc2[i])
+        for(var i=cc2.length-1;i >= 0;i--){
+          console.log("Re-Add cc2 "+i,cc2[i])
           document.body.appendChild(cc2[i]);
         }
       }
