@@ -57,6 +57,8 @@ data_config:
 
 
 _inputs:
+  title:
+    type: text
   permalink:
     comment: proper permalink format example:// /about/team
   copy_html:
