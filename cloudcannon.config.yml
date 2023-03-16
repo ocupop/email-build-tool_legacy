@@ -39,8 +39,8 @@ collections_config:
     add_options:
       - name: New blank
         icon: add_box
-      - name:
-        icon: Pre-populated
+      - name: New Pre-populated
+        icon: post_add
         schema: prepopulated
 
     schemas:
