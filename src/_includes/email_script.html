@@ -31,18 +31,18 @@
       var toolbar = document.getElementById("toolbar");
       var cc1 = document.getElementsByClassName('c-cloudcannon-editor-overlays');
       var cc2 = document.getElementsByClassName('cms-added-content');
-      const cc1_copy = cc1.slice();
-      const cc2_copy = cc2.slice();
 
       console.log("CC1 Length BEFORE = ",cc1.length)
       console.log("CC2 Length BEFORE = ",cc2.length)
       if(cc1){
+      const cc1_copy = cc1.slice();
         for(var i=cc1.length-1;i >= 0;i--){
           console.log('cc1 '+i,cc1[i]);
           cc1[i].remove();
         }
       }
       if(cc2){
+      const cc2_copy = cc2.slice();
         for(var i=cc2.length-1;i >= 0;i--){
           console.log('cc2 '+i,cc2[i]);
           cc2[i].remove();
