@@ -38,18 +38,6 @@ collections_config:
     add_options:
       - name: New blank
         icon: add_box
-      - name: New with content
-        schema: prepopulated
-        icon: post_add
-    schemas:
-      default:
-        name: Blank
-        path: schemas/newsletter_blank.md
-        # create:
-        #   path: news/{date|year}/{date|month}/{slug}[count].md
-      prepopulated:
-        name: Pre-Populated
-        path: schemas/newsletter_prepopulated.md
     _inputs:
       layout:
         type: select
