@@ -36,7 +36,7 @@ collections_config:
     singular_key: title
     icon: newspaper
     create:
-      path: news/{date|year}/{date|month}/{slug}[count].md
+      path: '[relative_base_path]/_newsletters/{date|year}/{date|month}/{title|slugify}[count].html'
     add_options:
       - name: Create new
         icon: add_box
