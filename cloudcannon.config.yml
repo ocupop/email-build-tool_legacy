@@ -35,8 +35,11 @@ collections_config:
     singular_name: Newsletter
     singular_key: title
     icon: newspaper
+
     create:
-      path: '[relative_base_path]/_newsletters/{date|year}/{date|month}/{title|slugify}[count].html'
+      extra_data:
+        filename: '{date|year}-{date|month}-{date|day}-{title}'
+      path: '[relative_base_path]/{filename|slugify}.[ext]'
     add_options:
       - name: Create new
         icon: add_box
