@@ -50,16 +50,16 @@ collections_config:
     schemas:
       default:
         name: Blank
-        path: schemas/newsletter_blank.md
+        path: newsletter/_schemas/newsletter_blank.md
       prepopulated:
         name: Pre-Populated
-        path: schemas/newsletter_prepopulated.md
+        path: newsletter/_schemas/newsletter_prepopulated.md
       test1:
         name: Pre-Populated
-        path: schemas/test1.md
+        path: newsletter/_schemas/test1.md
       test2:
         name: Pre-Populated
-        path: schemas/test2.md
+        path: newsletter/_schemas/test2.md
 
 
 
