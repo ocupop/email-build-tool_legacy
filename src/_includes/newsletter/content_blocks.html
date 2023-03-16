@@ -1,0 +1,18 @@
+{% for section in page.newsletter_sections %}
+{% case section._type %}
+
+  {% when 'teammember_spotlight' %}
+    {% include newsletter/sections/teammember_spotlight.html %}
+  {% when 'link_list_with_images' %}
+    {% include newsletter/sections/link_list_with_images.html %}
+  {% when 'headline_copy_cta' %}
+    {% include newsletter/sections/headline_copy_cta.html %}
+  {% when 'events' %}
+  {% include newsletter/sections/events.html %}
+  {% when 'articles' %}
+    {% include newsletter/sections/articles.html %}
+  {% when 'link_list_with_dates' %}
+    {% include newsletter/sections/link_list_with_dates.html %}
+
+{% endcase %}
+{% endfor %}

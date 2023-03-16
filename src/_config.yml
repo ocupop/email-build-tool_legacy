@@ -6,8 +6,8 @@
 
 # Site settings
 client: TBD
-title: Ocupop Project Template
-description: This description also used for social share meta
+title: Ocupop Email Builder
+description: A tool for building HTML emails which can then be pasted into your CRM of choice
 email: dev@ocupop.com
 url: "http://client_url.com"
 permalink: pretty
@@ -34,9 +34,7 @@ collections:
   newsletters:
     output: true
     permalink: /innovationlab-newsletters/:path/
-  examples:
-    output: true
-    permalink: /examples/:path/
+
 
 
 # ------------------------------------------------
@@ -56,14 +54,9 @@ defaults:
       layout: default
   -
     scope:
-      type: 'examples'
-    values:
-      layout: sandbox
-  -
-    scope:
       type: 'newsletters'
     values:
-      layout: email
+      layout: newsletter_default
       # variable_name: value
 
 
