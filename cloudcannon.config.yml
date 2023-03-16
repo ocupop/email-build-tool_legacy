@@ -38,6 +38,10 @@ collections_config:
     add_options:
       - name: Create New
         icon: add_box
+    schemas:
+      default:
+        name: "New Newsletter"
+        path: "schemas/newsletter_blank.md"
     _inputs:
       layout:
         type: select
