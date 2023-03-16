@@ -38,9 +38,7 @@
 
       var allHTML = document.documentElement.outerHTML;
       allHTML = allHTML.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
-      console.log('BEFORE',allHTML)
-      allHTML = 'zzzzz' . allHTML;
-      console.log('AFTER',allHTML)
+      allHTML = '<!DOCTYPE htmlPUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' + allHTML;
 
       if(toolbar) document.body.appendChild(toolbar);
       if(cc2)     document.body.appendChild(cc2);
