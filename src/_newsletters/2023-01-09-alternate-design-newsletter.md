@@ -2,7 +2,7 @@
 _schema: alternate
 layout: newsletter_alternate
 title: Alternate Design Newsletter
-date: 2023-01-09 00:00:00
+date: 2023-01-11 00:00:00
 spacing:
   container-width: 600
   gutter-width: 40
