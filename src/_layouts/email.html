@@ -9,62 +9,6 @@ spacing:
  "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-  <script>
-
-    document.addEventListener("DOMContentLoaded",function(event) {
-
-      function addToolbar(){
-        var toolbar = document.createElement("div");
-        toolbar.id = "toolbar";
-        toolbar.style.cssText = "position: fixed;top: 0px;left: 0px;width: 100%;padding: 0.5rem;background-color: rgba(255, 255, 255, 0.6);";
-        var button = document.createElement("button");
-        button.id = "copybutton";
-        button.innerText = 'Copy Source Code';
-        button.style.cssText = "background-color: #aacb65;border: none;font-size: 16px;padding: 8px 20px;color: white;margin-left: auto;display: block;margin-right: 20px;";
-        button.addEventListener("click",function(){copyTextToClipboard()});
-        toolbar.appendChild(button);
-        document.body.appendChild(toolbar);
-      }
-
-      function copyTextToClipboard() {
-        var toolbar = document.getElementById("toolbar");
-        var cc1 = document.getElementsByClassName('c-cloudcannon-editor-overlays')[0];
-        var cc2 = document.getElementsByClassName('cms-added-content')[0];
-        cc1.remove();
-        cc2.remove();
-        toolbar.remove();
-        var allHTML = document.documentElement.outerHTML;
-        document.body.appendChild(toolbar);
-        document.body.appendChild(cc2);
-        document.body.appendChild(cc1);
-
-        var textArea = document.createElement("textarea");
-        textArea.value = allHTML;
-        document.body.appendChild(textArea);
-        textArea.select();
-        try {
-          var successful = document.execCommand('copy');
-          var msg = successful ? 'successful' : 'unsuccessful';
-          console.log('Copying text command was ' + msg);
-          var button = document.getElementById("copybutton");
-          button.innerText = 'Copied!';
-          setTimeout(() => {
-            button.innerText = 'Copy Source Code';
-          }, "3000")
-
-        } catch (err) {
-          console.log('Oops, unable to copy');
-        }
-        document.body.removeChild(textArea);
-      }
-      setTimeout(() => {
-        if(document.body.classList.contains('cms-editor-active')){
-          console.log("We're in the editor. Add the Toolbar!");
-          addToolbar();
-        }
-      }, "1000");
-    })
-  </script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="initial-scale=1.0">    <!-- So that mobile webkit will display zoomed in -->
   <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
@@ -333,17 +277,67 @@ spacing:
 
 </td></tr></table><!-- END FULL WIDTH CONTAINER -->
 
-<div style="margin:0;padding:0;display:none" class="cms-added-content"><link href="https://cdn.cloudcannon.com/stylesheets/editor.c8fcbb5c.css" rel="stylesheet">
-<script src="https://cdn.cloudcannon.com/javascripts/inner-editor.f63819ef.js"></script>
-<script crossorigin="anonymous" src="https://cdn.cloudcannon.com/dh744ykb90nk4rj9en2qedhhd9ap4xkt6t95jp2fentku/ckeditor/ckeditor/ckeditor.js"></script>
-
 <script>
-	CKEDITOR.domReady(function () {
-		window.cmsLoad ? window.cmsLoad() : (window.cmsLoaded = true);
-	});
+
+  document.addEventListener("DOMContentLoaded",function(event) {
+
+    function addToolbar(){
+      var toolbar = document.createElement("div");
+      toolbar.id = "toolbar";
+      toolbar.style.cssText = "position: fixed;top: 0px;left: 0px;width: 100%;padding: 0.5rem;background-color: rgba(255, 255, 255, 0.6);";
+      var button = document.createElement("button");
+      button.id = "copybutton";
+      button.innerText = 'Copy Source Code';
+      button.style.cssText = "cursor:pointer;background-color: #aacb65;border: none;font-size: 16px;padding: 8px 20px;color: white;margin-left: auto;display: block;margin-right: 20px;";
+      button.addEventListener("click",function(){copyTextToClipboard()});
+      toolbar.appendChild(button);
+      document.body.appendChild(toolbar);
+    }
+
+    function copyTextToClipboard() {
+      var button = document.getElementById("copybutton");
+      var toolbar = document.getElementById("toolbar");
+      var cc1 = document.getElementsByClassName('c-cloudcannon-editor-overlays')[0];
+      var cc2 = document.getElementsByClassName('cms-added-content')[0];
+      if(cc1)     cc1.remove();
+      if(cc1)     cc2.remove();
+      if(toolbar)toolbar.remove();
+
+      var allHTML = document.documentElement.outerHTML;
+      allHTML = allHTML.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
+      if(toolbar) document.body.appendChild(toolbar);
+      if(cc2)     document.body.appendChild(cc2);
+      if(cc1)     document.body.appendChild(cc1);
+
+      var textArea = document.createElement("textarea");
+      textArea.value = allHTML;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        var successful = document.execCommand('copy');
+        var msg = successful ? 'successful' : 'unsuccessful';
+        console.log('Copying text command was ' + msg);
+        if(successful){
+          button.innerText = 'Copied!';
+          setTimeout(() => {
+            button.innerText = 'Copy Source Code';
+          }, "3000")
+        } else {
+          button.innerText = 'Error';
+        }
+      } catch (err) {
+        button.innerText = 'Unable to copy';
+      }
+      document.body.removeChild(textArea);
+    }
+    setTimeout(() => {
+      //if(document.body.classList.contains('cms-editor-active')){
+        console.log("We're in the editor. Add the Toolbar!");
+        addToolbar();
+      //}
+    }, "1000");
+  })
 </script>
-</div>
-<div class="c-cloudcannon-editor-overlays"></div>
 
 </body>
 </html>
