@@ -43,7 +43,7 @@ collections_config:
     schemas:
       default:
         name: Blank
-        path: schemas/newsletter_blank.md
+        path: src/_newsletters/schemas/blank.md
         # create:
         #   path: news/{date|year}/{date|month}/{slug}[count].md
 
