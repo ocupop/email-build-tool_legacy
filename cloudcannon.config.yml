@@ -41,15 +41,15 @@ collections_config:
       - name: New with content
         schema: prepopulated
         icon: post_add
-    schemas:
-      default:
-        name: Blank
-        path: schemas/newsletter_blank.md
-        create:
-        icon:
-      prepopulated:
-        name: Pre-Populated
-        path: schemas/newsletter_prepopulated.md
+    # schemas:
+    #   default:
+    #     name: Blank
+    #     path: schemas/newsletter_blank.md
+    #     create:
+    #     icon:
+    #   prepopulated:
+    #     name: Pre-Populated
+    #     path: schemas/newsletter_prepopulated.md
 
 
 
