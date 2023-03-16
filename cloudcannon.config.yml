@@ -37,10 +37,10 @@ collections_config:
     icon: newspaper
     add_options:
       - name: New blank
-        icon: post_add
+        icon: add_box
       - name: New with content
         schema: prepopulated
-        icon: engineering
+        icon: post_add
     schemas:
       default:
         name: Blank
