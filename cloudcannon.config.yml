@@ -39,11 +39,17 @@ collections_config:
     add_options:
       - name: New blank
         icon: add_box
+      - name:
+        icon: Pre-populated
+        schema: prepopulated
 
     schemas:
       default:
         name: Blank
-        path: src/_newsletters/schemas/blank.md
+        path: src/_newsletters/_schemas/blank.md
+      prepopulated:
+        name: Blank
+        path: src/_newsletters/_schemas/prepopulated.md
         # create:
         #   path: news/{date|year}/{date|month}/{slug}[count].md
 
