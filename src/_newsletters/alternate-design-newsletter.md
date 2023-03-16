@@ -1,6 +1,6 @@
 ---
 _schema: alternate
-_layout: newsletter_alternate
+layout: newsletter_alternate
 title: Alternate Design Newsletter
 spacing:
   container-width: 600
