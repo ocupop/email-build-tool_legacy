@@ -41,7 +41,7 @@ collections_config:
         default_content_file: newsletters/_defaults.html
       - name: New Pre-Populated
         icon: post_add
-        default_content_file: newsletters/_prepopulated.html
+        default_content_file: newsletters/sample.html
     _inputs:
       layout:
         type: select
