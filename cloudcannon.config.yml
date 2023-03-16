@@ -41,19 +41,25 @@ collections_config:
       - name: New with content
         schema: prepopulated
         icon: post_add
-    # schemas:
-    #   default:
-    #     name: Blank
-    #     path: schemas/newsletter_blank.md
-    #   prepopulated:
-    #     name: Pre-Populated
-    #     path: schemas/newsletter_prepopulated.md
-    #   test1:
-    #     name: Pre-Populated
-    #     path: schemas/test1.md
-    #   test2:
-    #     name: Pre-Populated
-    #     path: schemas/test2.md
+      - name: TEST 1
+        schema: test1
+        icon: post_add
+      - name: TEST 2
+        schema: test2
+        icon: post_add
+    schemas:
+      default:
+        name: Blank
+        path: schemas/newsletter_blank.md
+      prepopulated:
+        name: Pre-Populated
+        path: schemas/newsletter_prepopulated.md
+      test1:
+        name: Pre-Populated
+        path: schemas/test1.md
+      test2:
+        name: Pre-Populated
+        path: schemas/test2.md
 
 
 
