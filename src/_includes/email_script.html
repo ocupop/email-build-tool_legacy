@@ -9,6 +9,7 @@
 
       var toolbar = document.createElement("div");
       toolbar.id = "toolbar";
+      toolbar.classList.add("toolbar");
       toolbar.style.cssText = "font-size:14px;display:flex;align-items: center;justify-content:center;background-color:#aacb65;position: fixed;top: 0px;left: 0px;width: 100%;padding: 0.5rem;";
 
       var copy =  document.createElement("div");
@@ -28,49 +29,14 @@
 
     function copyTextToClipboard() {
       var button = document.getElementById("copybutton");
-      var toolbar = document.getElementById("toolbar");
-      var cc1 = document.getElementsByClassName('c-cloudcannon-editor-overlays');
-      var cc2 = document.getElementsByClassName('cms-added-content');
 
-      console.log("CC1 Length BEFORE = ",cc1.length)
-      console.log("CC2 Length BEFORE = ",cc2.length)
-      if(cc1){
-      const cc1_copy = cc1.slice();
-        for(var i=cc1.length-1;i >= 0;i--){
-          console.log('cc1 '+i,cc1[i]);
-          cc1[i].remove();
-        }
-      }
-      if(cc2){
-      const cc2_copy = cc2.slice();
-        for(var i=cc2.length-1;i >= 0;i--){
-          console.log('cc2 '+i,cc2[i]);
-          cc2[i].remove();
-        }
-      }
-      if(toolbar)toolbar.remove();
-
+      // Get the email HTML
       var allHTML = document.documentElement.outerHTML;
-      allHTML = allHTML.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
-      allHTML = '<!DOCTYPE htmlPUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' + allHTML;
 
-      if(toolbar) document.body.appendChild(toolbar);
+      // Remove the toolbar and any elements that CloudCannon added
+      allHTML = stripOutNonEmailHTML(allHTML)
 
-      console.log("CC1 Length AFTER = ",cc1_copy.length)
-      console.log("CC2 Length AFTER = ",cc2_copy.length)
-      if(cc1_copy){
-        for(var i=cc1_copy.length-1;i >= 0;i--){
-          console.log("Re-Add CC1 "+i,cc1_copy[i])
-          document.body.appendChild(cc1_copy[i]);
-        }
-      }
-      if(cc2_copy){
-        for(var i=cc2_copy.length-1;i >= 0;i--){
-          console.log("Re-Add cc2 "+i,cc2_copy[i])
-          document.body.appendChild(cc2_copy[i]);
-        }
-      }
-
+      // Create a textarea element and place the HTML inside of it. This allows us to copy the HTML to the clipboard, instead of just the text;
       var textArea = document.createElement("textarea");
       textArea.value = allHTML;
       document.body.appendChild(textArea);
@@ -92,12 +58,35 @@
       }
       document.body.removeChild(textArea);
     }
+
+    function stripOutNonEmailHTML(html){
+      html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
+
+      var dup = document.createElement( 'html' );
+      dup.setAttribute('lang','en')
+      dup.innerHTML = html
+
+      var toolbar = dup.getElementsByClassName('toolbar')[0];
+      toolbar.parentNode.removeChild(toolbar);
+
+      var removeThese = dup.getElementsByClassName('cms-added-content');
+      while(removeThese.length > 0){
+        removeThese[0].parentNode.removeChild(removeThese[0]);
+      }
+
+      var removeThese = dup.getElementsByClassName('c-cloudcannon-editor-overlays');
+      while(removeThese.length > 0){
+        removeThese[0].parentNode.removeChild(removeThese[0]);
+      }
+      return '<!DOCTYPE htmlPUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' + dup.outerHTML;
+    }
+
     setTimeout(() => {
-      //if(document.body.classList.contains('cms-editor-active')){
+      if(document.body.classList.contains('cms-editor-active')){
         console.log("We're in the editor. Add the Toolbar!");
         addToolbar();
-      //}
-    }, "1000");
+      }
+    }, "500");
   })
 
 
