@@ -54,8 +54,8 @@ collections_config:
         path: src/_schemas/newsletter_prepopulated.md
       alternate:
         path: src/_schemas/newsletter_alternate.md
-        # create:
-        #   path: news/{date|year}/{date|month}/{slug}[count].md
+        create:
+          path: {date|year}-{date|month}-{date|day}-{slug}[count].html
     filter:
       exclude:
         - schemas
