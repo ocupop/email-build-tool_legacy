@@ -48,7 +48,7 @@ collections_config:
         name: Blank
         path: src/_newsletters/_schemas/blank.md
       prepopulated:
-        name: Blank
+        name: Pre-Populated
         path: src/_newsletters/_schemas/prepopulated.md
         # create:
         #   path: news/{date|year}/{date|month}/{slug}[count].md
