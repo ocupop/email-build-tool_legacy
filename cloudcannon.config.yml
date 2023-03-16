@@ -39,29 +39,6 @@ collections_config:
       - name: Create Another Newsletter
         icon: post_add
 
-  examples:
-    name: Examples
-    _enabled_editors:
-      - visual
-      - content
-      - data
-    output: true
-    preview:
-      subtext:
-        - key: title
-    singular_name: Example
-    singular_key: title
-    disable_add: false
-    description: Collection of some sandbox examples.
-    # documentation:
-    #   url: https://example.com/documentation
-    #   text: Read the documentation here.
-    icon: cruelty_free
-    add_options:
-      - name: Add Another Example Page
-        icon: kayaking
-
-
 
 # data_config controls what data sets are available to populate select and multiselect inputs.
 # If set as a boolean and true, all auto-discoverable data sets are added. This is only applicable to Jekyll and Hugo sites.
@@ -70,7 +47,7 @@ data_config:
   # authors: true # Populates data with authors from an data file with the matching name
   # offices: true
 
-# These inputs are for demonstration purposes. See implementation on src/examples/testconfig.html
+
 _inputs:
   permalink:
     comment: proper permalink format example:// /about/team
@@ -137,11 +114,11 @@ _inputs:
   #   type: array
   #   options:
   #     structures: _structures.dynamic_blocks # This structure is defined below under "_structures"
-  il_newsletter_sections:
+  newsletter_sections:
     label: Innovation Lab Newsletter
     type: array
     options:
-      structures: _structures.il_newsletter_sections # This structure is defined below under "_structures"
+      structures: _structures.newsletter_sections # This structure is defined below under "_structures"
 
 _select_data:
   il_bg_colors:
@@ -173,7 +150,7 @@ _select_data:
 
 
 # ARRAY STRUCTURES
-# This is an example of how we can use array structures to allow the admin to add dynamic blocks. See examples/testconfig.html
+# This is an example of how we can use array structures to allow the admin to add dynamic blocks.
 # https://cloudcannon.com/documentation/articles/migrating-to-input-configuration/?ssg=Jekyll#structures
 # https://cloudcannon.com/blog/managing-complex-content-with-array-structures/#:~:text=What%20are%20Array%20Structures%3F,to%20create%20their%20own%20pages.
 _structures:
@@ -200,7 +177,7 @@ _structures:
         value:
           _id: slideshow
           slides: []
-  il_newsletter_sections: # see the "_input" config for "il_newsletter_sections" above.
+  newsletter_sections: # see the "_input" config for "newsletter_sections" above.
     values:
       - label: Image, Headline, Text, CTA
         icon: format_align_center
