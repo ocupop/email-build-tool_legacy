@@ -5,7 +5,7 @@
 {% assign leftcol_width = page.spacing.container-width | minus:page.spacing.gutter-width | minus:page.spacing.gutter-width | times: leftPercent | floor %}
 {% assign rightcol_width = page.spacing.container-width | minus:page.spacing.gutter-width | minus:page.spacing.gutter-width | minus:gap | minus:leftcol_width | floor %}
 
-<table class="upcoming-events" width="100%" cellspacing="0" cellpadding="0" border="0" style="min-width:100%;">
+<table data-cms-bind="#il_newsletter_sections[{{forloop.index0}}]" class="upcoming-events" width="100%" cellspacing="0" cellpadding="0" border="0" style="min-width:100%;">
   <tr>
     <td align="center">
 
