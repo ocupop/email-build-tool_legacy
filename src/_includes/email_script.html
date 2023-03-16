@@ -32,16 +32,18 @@
       var cc1 = document.getElementsByClassName('c-cloudcannon-editor-overlays');
       var cc2 = document.getElementsByClassName('cms-added-content');
 
+      console.log("CC1 Length BEFORE = ",cc1.length)
+      console.log("CC2 Length BEFORE = ",cc2.length)
       if(cc1){
-        for(var index=0;index < cc1.length;index++){
-          console.log('cc1 '+index,cc1[index]);
-          cc1[index].remove();
+        for(var i=0;i < cc1.length;i++){
+          console.log('cc1 '+i,cc1[i]);
+          cc1[i].remove();
         }
       }
       if(cc2){
-        for(var index=0;index < cc2.length;index++){
-          console.log('cc2 '+index,cc2[index]);
-          cc2[index].remove();
+        for(var i=0;i < cc2.length;i++){
+          console.log('cc2 '+i,cc2[i]);
+          cc2[i].remove();
         }
       }
       if(toolbar)toolbar.remove();
@@ -52,16 +54,18 @@
 
       if(toolbar) document.body.appendChild(toolbar);
 
+      console.log("CC1 Length AFTER = ",cc1.length)
+      console.log("CC2 Length AFTER = ",cc2.length)
       if(cc1){
-        for(var index=0;index < cc1.length;index++){
-          console.log("Re-Add CC1 ",cc1[index])
-          document.body.appendChild(cc1[index]);
+        for(var i=0;i < cc1.length;i++){
+          console.log("Re-Add CC1 ",cc1[i])
+          document.body.appendChild(cc1[i]);
         }
       }
       if(cc2){
-        for(var index=0;index < cc2.length;index++){
-          console.log("Re-Add cc2 ",cc2[index])
-          document.body.appendChild(cc2[index]);
+        for(var i=0;i < cc2.length;i++){
+          console.log("Re-Add cc2 ",cc2[i])
+          document.body.appendChild(cc2[i]);
         }
       }
 
