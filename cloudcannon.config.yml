@@ -51,17 +51,15 @@ collections_config:
       default:
         name: Blank
         path: schemas/newsletter_blank.md
-        create:
-        icon:
       prepopulated:
         name: Pre-Populated
         path: schemas/newsletter_prepopulated.md
       test1:
         name: Pre-Populated
-        path: src/schemas/newsletter_prepopulated.md
+        path: schemas/test1.md
       test2:
         name: Pre-Populated
-        path: schemas/newsletter_prepopulated.html
+        path: schemas/test2.md
 
 
 

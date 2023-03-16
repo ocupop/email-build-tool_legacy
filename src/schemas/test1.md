@@ -1,13 +1,6 @@
 ---
 layout: newsletter_default
-_inputs:
-  layout:
-    type: select
-    options:
-      values:
-        - newsletter_default
-        - newsletter_alternate
-title: NEW NEWSLETTER
+title: NEW TEST
 date: 2023-03-14 00:00:00
 spacing:
   container-width: 600
