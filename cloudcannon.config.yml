@@ -38,6 +38,19 @@ collections_config:
     add_options:
       - name: Create Another Newsletter
         icon: post_add
+      - name: Create Another Newsletter (pre-populated)
+        schema: prepopulated
+        icon: engineering
+    schemas:
+      default:
+        name: Blank
+        path: newsletters/schemas/blank.md
+        create:
+        icon:
+      prepopulated:
+        name: Pre-Populated
+        path: includes/newsletter/schemas/prepopulated.md
+
 
 
 # data_config controls what data sets are available to populate select and multiselect inputs.
