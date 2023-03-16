@@ -55,7 +55,7 @@ collections_config:
       alternate:
         path: src/_schemas/newsletter_alternate.md
         # create:
-        #   path: '[relative_base_path]/{date|year}-{date|month}-{date|day}-{slug}[count].html'
+        #   path: news/{date|year}/{date|month}/{slug}[count].md
     filter:
       exclude:
         - schemas
