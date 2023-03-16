@@ -35,7 +35,6 @@ collections_config:
     singular_name: Newsletter
     singular_key: title
     icon: newspaper
-
     add_options:
       - name: Create new
         icon: add_box
@@ -43,7 +42,9 @@ collections_config:
       - name: Create from template
         icon: post_add
         schema: prepopulated
-
+      - name: Alternate Design
+        icon: post_add
+        schema: alternate
     schemas:
       default:
         name: Blank
@@ -51,6 +52,8 @@ collections_config:
       prepopulated:
         name: Pre-Populated
         path: src/_schemas/newsletter_prepopulated.md
+      alternate:
+        path: src/_schemas/newsletter_alternate.md
         # create:
         #   path: news/{date|year}/{date|month}/{slug}[count].md
     filter:

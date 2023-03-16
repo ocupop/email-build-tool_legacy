@@ -1,4 +1,5 @@
 ---
+layout: newsletter_default
 title: New Blank Newsletter
 spacing:
   container-width: 602
