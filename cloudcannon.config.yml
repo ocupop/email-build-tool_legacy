@@ -97,23 +97,6 @@ _inputs:
       preview:
         text:
           - key: display_name
-  # example_input_4:
-  #   label: This Input Should Be an Multi Select
-  #   type: multiselect
-  #   options:
-  #     values:
-  #       - Wisconsin
-  #       - Minnesota
-  #       - north Dakota
-  #       - Iowa
-  #       - Illinois
-  #       - South Dakota
-  # example_cards:
-  # page_blocks:
-  #   label: Dynamic page blocks
-  #   type: array
-  #   options:
-  #     structures: _structures.dynamic_blocks # This structure is defined below under "_structures"
   newsletter_sections:
     label: Innovation Lab Newsletter
     type: array
