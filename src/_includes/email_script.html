@@ -31,12 +31,15 @@
       var toolbar = document.getElementById("toolbar");
       var cc1 = document.getElementsByClassName('c-cloudcannon-editor-overlays')[0];
       var cc2 = document.getElementsByClassName('cms-added-content')[0];
+      console.log('cc2',cc2)
       if(cc1)     cc1.remove();
       if(cc2)     cc2.remove();
       if(toolbar)toolbar.remove();
 
       var allHTML = document.documentElement.outerHTML;
       allHTML = allHTML.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "");
+      allHTML = '<!DOCTYPE htmlPUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' . allHTML;
+
       if(toolbar) document.body.appendChild(toolbar);
       if(cc2)     document.body.appendChild(cc2);
       if(cc1)     document.body.appendChild(cc1);
