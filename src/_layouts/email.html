@@ -331,10 +331,10 @@ spacing:
       document.body.removeChild(textArea);
     }
     setTimeout(() => {
-      //if(document.body.classList.contains('cms-editor-active')){
+      if(document.body.classList.contains('cms-editor-active')){
         console.log("We're in the editor. Add the Toolbar!");
         addToolbar();
-      //}
+      }
     }, "1000");
   })
 </script>
