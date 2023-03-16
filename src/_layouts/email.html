@@ -52,6 +52,9 @@ spacing:
         document.body.removeChild(textArea);
       }
       console.log(document.body.classList)
+      console.log('window.self',window.self)
+      console.log('window.top',window.top)
+
 			if(document.body.classList.contains('cms-editor-active')){
         console.log("We're in the editor. Add the Toolbar!")
       	addToolbar()
