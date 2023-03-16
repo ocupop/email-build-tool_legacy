@@ -30,10 +30,20 @@
       var button = document.getElementById("copybutton");
       var toolbar = document.getElementById("toolbar");
       var cc1 = document.getElementsByClassName('c-cloudcannon-editor-overlays')[0];
-      var cc2 = document.getElementsByClassName('cms-added-content')[0];
-      console.log('cc2',cc2)
-      if(cc1)     cc1.remove();
-      if(cc2)     cc2.remove();
+      var cc2 = document.getElementsByClassName('cms-added-content');
+
+      if(cc1){
+        for(var index=0;index < cc1.length;index++){
+          console.log('cc1 '+index,cc1[index]);
+          cc2[index].remove();
+        }
+      }
+      if(cc2){
+        for(var index=0;index < cc2.length;index++){
+          console.log('cc2 '+index,cc2[index]);
+          cc2[index].remove();
+        }
+      }
       if(toolbar)toolbar.remove();
 
       var allHTML = document.documentElement.outerHTML;
@@ -41,8 +51,17 @@
       allHTML = '<!DOCTYPE htmlPUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">' + allHTML;
 
       if(toolbar) document.body.appendChild(toolbar);
-      if(cc2)     document.body.appendChild(cc2);
-      if(cc1)     document.body.appendChild(cc1);
+
+      if(cc1){
+        for(var index=0;index < cc1.length;index++){
+          document.body.appendChild(cc1[index]);
+        }
+      }
+      if(cc2){
+        for(var index=0;index < cc2.length;index++){
+          document.body.appendChild(cc2[index]);
+        }
+      }
 
       var textArea = document.createElement("textarea");
       textArea.value = allHTML;
