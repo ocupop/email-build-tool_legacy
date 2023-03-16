@@ -361,7 +361,8 @@ spacing:
   async function useNewPageProps(CloudCannon) {
     const latestValue = await CloudCannon.value();
     console.log(latestValue)
-    CloudCannon.set(page, latestValue);
+    CloudCannon.set('title', 'abc');
+    CloudCannon.set('page', latestValue);
   }
 
 
