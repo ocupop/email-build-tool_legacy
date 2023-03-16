@@ -3,14 +3,25 @@
   document.addEventListener("DOMContentLoaded",function(event) {
 
     function addToolbar(){
+
+      var style = document.createElement('style');
+      style.appendChild(document.createTextNode('body { margin-top:40px; }'));
+
       var toolbar = document.createElement("div");
       toolbar.id = "toolbar";
-      toolbar.style.cssText = "position: fixed;top: 0px;left: 0px;width: 100%;padding: 0.5rem;background-color: rgba(255, 255, 255, 0.6);";
+      toolbar.style.cssText = "font-size:14px;display:flex;align-items: center;justify-content:center;background-color:#aacb65;position: fixed;top: 0px;left: 0px;width: 100%;padding: 0.5rem;";
+
+      var copy =  document.createElement("div");
+      copy.innerText = "Copy the email source code to your clipboard, then paste into your email marketing platform."
+
       var button = document.createElement("button");
       button.id = "copybutton";
       button.innerText = 'Copy Source Code';
-      button.style.cssText = "cursor:pointer;background-color: #aacb65;border: none;font-size: 16px;padding: 8px 20px;color: white;margin-left: auto;display: block;margin-right: 20px;";
+      button.style.cssText = "margin-left:16px;cursor:pointer;background-color: #FFFFFF;border: none;font-size: 14px;padding: 4px 12px;color: black;display: block;";
       button.addEventListener("click",function(){copyTextToClipboard()});
+
+      toolbar.appendChild(style);
+      toolbar.appendChild(copy);
       toolbar.appendChild(button);
       document.body.appendChild(toolbar);
     }
@@ -52,10 +63,10 @@
       document.body.removeChild(textArea);
     }
     setTimeout(() => {
-      if(document.body.classList.contains('cms-editor-active')){
+      //if(document.body.classList.contains('cms-editor-active')){
         console.log("We're in the editor. Add the Toolbar!");
         addToolbar();
-      }
+      //}
     }, "1000");
   })
 

@@ -36,7 +36,7 @@ collections_config:
     singular_key: title
     icon: newspaper
     add_options:
-      - name: New blank
+      - name: Create New
         icon: add_box
     _inputs:
       layout:
