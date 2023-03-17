@@ -3,9 +3,7 @@
     setTimeout(() => {
       if(document.body.classList.contains('cms-editor-active')){
 
-        var live_preview_js = document.createElement('script');
-        live_preview_js.setAttribute('src','/js/live-data-previews.js');
-        document.head.appendChild(live_preview_js);
+
 
         var copy_btn_js = document.createElement('script');
         copy_btn_js.setAttribute('src','/js/add-email-copy-button.js');
@@ -13,5 +11,10 @@
 
       }
     }, "500");
+
   })
+
+  var live_preview_js = document.createElement('script');
+  live_preview_js.setAttribute('src','/js/live-data-previews.js');
+  document.head.appendChild(live_preview_js);
 </script>
