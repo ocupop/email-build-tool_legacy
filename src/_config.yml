@@ -9,7 +9,7 @@ client: TBD
 title: Ocupop Email Builder
 description: A tool for building HTML emails which can then be pasted into your CRM of choice
 email: dev@ocupop.com
-url: "http://client_url.com"
+url: "http://localhost:4000"
 permalink: pretty
 
 # Social sharing
