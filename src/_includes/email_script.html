@@ -1,20 +1,21 @@
 <script>
-  document.addEventListener("DOMContentLoaded",function(event) {
-    setTimeout(() => {
-      if(document.body.classList.contains('cms-editor-active')){
+  if (!window.CloudCannon) {
+    document.addEventListener('cloudcannon:load', function (e) {
+      onLiveEditorLoad(e.detail.CloudCannon);
+    });
+  } else {
+    onLiveEditorLoad(window.CloudCannon);
+  }
 
-
-
-        var copy_btn_js = document.createElement('script');
+  function onLiveEditorLoad(CloudCannon) {
+    console.log('page is being viewed in the Live Editor. Load Additional scripts.')
+    var copy_btn_js = document.createElement('script');
         copy_btn_js.setAttribute('src','/js/add-email-copy-button.js');
         document.head.appendChild(copy_btn_js);
+    var live_preview_js = document.createElement('script');
+        live_preview_js.setAttribute('src','/js/live-data-previews.js');
+        document.head.appendChild(live_preview_js);
+  }
 
-      }
-    }, "500");
 
-  })
-
-  var live_preview_js = document.createElement('script');
-  live_preview_js.setAttribute('src','/js/live-data-previews.js');
-  document.head.appendChild(live_preview_js);
 </script>
