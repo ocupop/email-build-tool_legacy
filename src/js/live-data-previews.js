@@ -8,9 +8,9 @@ CloudCannon.enableEvents();
 document.addEventListener('cloudcannon:update', async function (e) {
   useNewPageProps(e.detail.CloudCannon);
 });
-document.addEventListener('cloudcannon:save', async function (e) {
-  console.log("Saved")
-});
+// document.addEventListener('cloudcannon:save', async function (e) {
+//   console.log("Saved")
+// });
 
 async function useNewPageProps(CloudCannon) {
   const latestValue = await CloudCannon.value();
