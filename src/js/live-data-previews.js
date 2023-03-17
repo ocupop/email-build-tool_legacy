@@ -1,9 +1,16 @@
-// This page is ONLY loaded if we are viewing in the CloudCannon Live Editor
-
 // CLOUDCANNON LIVE EDITING
 // https://cloudcannon.com/documentation/articles/using-live-editing-with-vanilla-js///
+if (!window.CloudCannon) {
+  document.addEventListener('cloudcannon:load', function (e) {
+    onLiveEditorLoad(e.detail.CloudCannon);
+  });
+} else {
+  onLiveEditorLoad(window.CloudCannon);
+}
 
-CloudCannon.enableEvents();
+function onLiveEditorLoad(CloudCannon) {
+  CloudCannon.enableEvents();
+}
 
 document.addEventListener('cloudcannon:update', async function (e) {
   useNewPageProps(e.detail.CloudCannon);
@@ -12,14 +19,10 @@ document.addEventListener('cloudcannon:update', async function (e) {
 async function useNewPageProps(CloudCannon) {
   const latestValue = await CloudCannon.value();
   console.log("LATEST",latestValue)
-  console.log("TITLE",latestValue.title)
 
-
-  CloudCannon.set('title', latestValue.title);
-  CloudCannon.set('spacing.container-width', '500');
-
-  // CloudCannon.set('spacing["gutter-width"]', '500');
-  // CloudCannon.set(spacing.gutter-width-mobile, '500');
+  // These will upate frontmatter, not the preview...
+  // CloudCannon.set('title', latestValue.title);
+  // CloudCannon.set('spacing.container-width', '500');
 
   // for (const key in latestValue) {
   //   console.log(key,latestValue[key]);
