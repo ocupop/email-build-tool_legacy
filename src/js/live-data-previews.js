@@ -12,10 +12,10 @@ document.addEventListener('cloudcannon:update', async function (e) {
 async function useNewPageProps(CloudCannon) {
   const latestValue = await CloudCannon.value();
   console.log("LATEST",latestValue)
-  console.log("TITLE",latestValue.title + " Updated!")
+  console.log("TITLE",latestValue.title)
 
 
-  CloudCannon.set('title', latestValue.title);
+  CloudCannon.set('title', latestValue.title + " Updated!");
   CloudCannon.set('spacing.container-width', '500');
 
   // CloudCannon.set('spacing["gutter-width"]', '500');
