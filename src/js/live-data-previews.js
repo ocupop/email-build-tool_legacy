@@ -1,6 +1,8 @@
+// This page is ONLY loaded if we are viewing in the CloudCannon Live Editor
+
 // CLOUDCANNON LIVE EDITING
 // https://cloudcannon.com/documentation/articles/using-live-editing-with-vanilla-js///
-console.log("CloudCannon",CloudCannon)
+
 CloudCannon.enableEvents();
 
 document.addEventListener('cloudcannon:update', async function (e) {
@@ -10,7 +12,7 @@ document.addEventListener('cloudcannon:update', async function (e) {
 async function useNewPageProps(CloudCannon) {
   const latestValue = await CloudCannon.value();
   console.log("LATEST",latestValue)
-  console.log("TITLE",latestValue.title)
+  console.log("TITLE",latestValue.title + " Updated!")
 
 
   CloudCannon.set('title', latestValue.title);
