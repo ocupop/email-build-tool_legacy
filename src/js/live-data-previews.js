@@ -22,7 +22,7 @@ async function useNewPageProps(CloudCannon) {
 
 
   CloudCannon.set('title', 'Dynamically Updated Title');
-  // CloudCannon.set('spacing.container-width', '500');
+  CloudCannon.set('spacing.container-width', '500');
   // CloudCannon.set('spacing["gutter-width"]', '500');
   // CloudCannon.set(spacing.gutter-width-mobile, '500');
 
