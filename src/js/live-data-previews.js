@@ -18,11 +18,8 @@ async function useNewPageProps(CloudCannon) {
   console.log("TITLE",latestValue.title)
 
 
-  CloudCannon.set('title', latestValue.title);
-  CloudCannon.set('spacing.container-width', '500');
-
-  // CloudCannon.set('spacing["gutter-width"]', '500');
-  // CloudCannon.set(spacing.gutter-width-mobile, '500');
+  // CloudCannon.set('title', latestValue.title);
+  // CloudCannon.set('spacing.container-width', '500');
 
   // for (const key in latestValue) {
   //   console.log(key,latestValue[key]);
