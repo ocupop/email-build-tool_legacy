@@ -1,13 +1,6 @@
 ---
 _schema: default
 layout: newsletter_default
-_inputs:
-  layout:
-    type: select
-    options:
-      values:
-        - newsletter_default
-        - newsletter_alternate
 title: InnovationLab March News
 date: 2023-03-14 00:00:00
 spacing:
@@ -16,7 +9,7 @@ spacing:
   gutter-width-mobile: 20
 newsletter_sections:
   - _type: headline_copy_cta
-    headline: Title of Newsletter
+    headline: Title of Newsletter Hello World.
     copy_html: >-
       <p>Lorem ipsum dolor sit amet, consect etuer adipiscing elit, sed diam non
       ummy nibh euismod tinciduntg ut laoreet dolore manga aliuam erat volutpat.
