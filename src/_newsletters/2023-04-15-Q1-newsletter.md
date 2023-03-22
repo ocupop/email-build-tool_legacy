@@ -1,6 +1,6 @@
 ---
 _schema: default
-layout: newsletter_default
+layout: newsletter_alternate
 title: InnovationLab March News
 date: 2023-03-14 00:00:00
 spacing:
