@@ -175,4 +175,15 @@ newsletter_sections:
         date: 2022-08-24 00:00:00
     left_column_percent: 33
     il_newsletter_background_color: '#f8f8f6'
+  - _type: headline_copy_cta
+    headline: New Section
+    copy_html: <p>test</p>
+    background-color:
+    image:
+    cta:
+      label:
+      url:
+      background-color:
+      text-color:
+      width:
 ---
